@@ -1,6 +1,7 @@
 token = "302476657:AAGWcwvSHcbnknJYBx0AgyYqTGezIEjUJFM"
 
 manager = 81593382
+collection_time = 1209600
 
 message_start_bot = "Bot initialised"
 message_start = """Привет! Я бот-библиотекарь в SME.
@@ -30,6 +31,9 @@ message_thanks_for_suggest = "Спасибо! Твое пожелание заф
 message_suggest_prefix = "Новое предложение книги: "
 message_stupid_bot = "Ты глупый"
 message_stupid_bot_reply = "Это не мешает мне прекрасно справляться с моей работой!:)"
+message_collection_forbidden = "Попытка коллекшена от неавторизованного юзера!!!"
+message_collection_successfull = "Коллектед :)"
+message_collection = "Добрый день. Извиняюсь за назойливость, но у нас принято брать книгу не больше чем на две недели. Пожалуйста, верните книгу номер {0} на полку, если не читаете ее."
 
 
 filename_status = "books_status.data"

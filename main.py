@@ -36,9 +36,15 @@ def is_number(text):
     return num_bool & range_bool
 
 def list_of_books():
+    books = dict()
     res = "Список книг:\n"
+    with open(constants.filename_status,'r') as book_file:
+        for line in book_file:
+            books[int(line.split(',')[0])] = [line.split(',')[1], line.split(',')[2]]
     for item in constants.lib:
         res += "/" + str(item) + " : "
+        if int(books[item][0]) != 0:
+            res += " (отдана) "
         res += constants.lib[item][0]
         res += "\n"
     return res
@@ -76,6 +82,18 @@ def put_book_on_shell(book_id, message):
 def book_info(book_id, message):
     return(constants.lib[book_id][0] + "\n " + constants.lib[book_id][1])
 
+def collect(message):
+    if message.from_user.id != constants.manager:
+        return false
+    #collect
+    with open(constants.filename_status,'r') as book_file:
+        for line in book_file:
+            if int(line.split(',')[1]) != 0 and round(time.time()) - constants.collection_time > int(line.split(',')[2]):
+                #print("Starting collection...   " + line)
+                answer = constants.message_collection.format(line.split(',')[0])
+                sent = bot.send_message(int(line.split(',')[1]), answer)
+                log(sent, answer)
+    return True
 
 @bot.message_handler(commands=['start'])
 def handle_text(message):
@@ -193,6 +211,17 @@ def manage_book(message):
         bot.send_message(message.chat.id, answer)
         current_book_num = 0
         log(message, answer)
+
+@bot.message_handler(commands=['collect'])
+def handler_text(message):
+    if collect(message):
+        answer = constants.message_collection_successfull
+        bot.send_message(message.chat.id, answer)
+        log(message, answer)
+    else:
+        answer = constants.message_collection_forbidden
+        bot.send_message(constants.manager, answer)
+        log(message, answer)  
 
 @bot.message_handler(content_types=['text'])
 def handle_text(message):
