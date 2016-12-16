@@ -2,7 +2,6 @@ import telebot
 import constants
 from datetime import datetime
 import time
-import json
 
 print(constants.message_start_bot)
 
@@ -11,7 +10,8 @@ bot = telebot.TeleBot(constants.token)
 current_book_num = 0
 
 def logprint(text):
-    with open(constants.filename_log,'a') as logfile:
+    filename = constants.filename_log + "_" + str(datetime.now()).split(' ')[0] 
+    with open(filename,'a') as logfile:
         logfile.write(text)
     print(text)
 

@@ -3,6 +3,10 @@ token = "302476657:AAGWcwvSHcbnknJYBx0AgyYqTGezIEjUJFM"
 manager = 81593382
 collection_time = 1209600
 
+filename_status = "books_status.data"
+filename_log_name = "log"
+filename_log_extension = ".log"
+
 log_text = "name=\"{0}\" surname=\"{1}\" id={2} text=\"{3}\" answer=\"{4}\" \n"
 
 message_start_bot = "Bot initialised"
@@ -39,9 +43,6 @@ message_collection_forbidden = "Попытка коллекшена от неа�
 message_collection_successfull = "Коллектед :)"
 message_collection = "Добрый день. Извиняюсь за назойливость, но у нас принято брать книгу не больше чем на две недели. Пожалуйста, верните книгу номер {0} на полку, если не читаете ее"
 
-
-filename_status = "books_status.data"
-filename_log = "log.log"
 
 lib = dict({
 1: ["Алистер Коберн. Современные методы описания функциональных требований к системам","Как писать юз-кейсы https://www.ozon.ru/context/detail/id/5820242/",""],
