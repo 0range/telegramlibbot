@@ -3,6 +3,8 @@ token = "302476657:AAGWcwvSHcbnknJYBx0AgyYqTGezIEjUJFM"
 manager = 81593382
 collection_time = 1209600
 
+log_text = "name=\"{0}\" surname=\"{1}\" id={2} text=\"{3}\" answer=\"{4}\" \n"
+
 message_start_bot = "Bot initialised"
 message_start = """Привет! Я бот-библиотекарь в SME.
 Скажи мне, какую книжку ты хочешь взять, и я тебя запишу ;)
@@ -23,7 +25,9 @@ message_help =  """Напоминаю:
 message_tell_book_number_get = "Скажи номер книги, которую хочешь взять"
 message_tell_book_number_return = "Скажи номер книги, которую возвращаешь"
 message_already_taken = "Кажется, эту книгу уже забрали"
+message_you_got_book = "Отлично, книга номер {0} - {1} теперь у тебя"
 message_already_returned = "Кажется, эта книга уже на полке"
+message_you_returned_book = "Отлично, книга номер {0} - {1} вернулась на полку. Спасибо!"
 message_bad_number = "Извини, непонятный номер книги :("
 message_what_to_do = "Ты выбрал книгу - что с ней делать?"
 message_suggest_cool = "Круто! Какую книгу хочешь предложить?"
@@ -33,7 +37,7 @@ message_stupid_bot = "Ты глупый"
 message_stupid_bot_reply = "Это не мешает мне прекрасно справляться с моей работой!:)"
 message_collection_forbidden = "Попытка коллекшена от неавторизованного юзера!!!"
 message_collection_successfull = "Коллектед :)"
-message_collection = "Добрый день. Извиняюсь за назойливость, но у нас принято брать книгу не больше чем на две недели. Пожалуйста, верните книгу номер {0} на полку, если не читаете ее."
+message_collection = "Добрый день. Извиняюсь за назойливость, но у нас принято брать книгу не больше чем на две недели. Пожалуйста, верните книгу номер {0} на полку, если не читаете ее"
 
 
 filename_status = "books_status.data"

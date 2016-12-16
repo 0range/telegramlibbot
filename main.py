@@ -17,12 +17,11 @@ def logprint(text):
 
 def log(message, answer):
     logprint(str(datetime.now()) + " ")
-    logprint("name=\"{0}\" surname=\"{1}\" id={2} text=\"{3}\" ".format(message.from_user.first_name,
-                                                                  message.from_user.last_name,
-                                                                  str(message.from_user.id),
-                                                                  message.text))
-    logprint("answer=\"" + answer + "\" ")
-    logprint("\n")
+    logprint(constants.log_text.format(message.from_user.first_name,
+                                       message.from_user.last_name,
+                                       str(message.from_user.id),
+                                       message.text,
+                                       answer))
 
 def is_number(text):
     a = 0
@@ -117,8 +116,8 @@ def handle_text(message):
 def take_book(message):
     if is_number(message.text):
         if get_book_from_shell(int(message.text), message):
-            answer =  "Отлично, книга номер {0} - {1} теперь у тебя".format(message.text.strip(), 
-                                                                            constants.lib[int(message.text.strip())][0])
+            answer =  constants.message_you_got_book.format(message.text.strip(), 
+                                                            constants.lib[int(message.text.strip())][0])
         else:
             answer = constants.message_already_taken
         bot.send_message(message.chat.id, answer)
@@ -138,8 +137,8 @@ def handle_text(message):
 def return_book(message):
     if is_number(message.text):
         if put_book_on_shell(int(message.text), message):
-            answer = "Отлично, книга номер {0} - {1} вернулась на полку. Спасибо!".format(message.text.strip(), 
-                                                                                   constants.lib[int(message.text.strip())][0])
+            answer = constants.message_you_returned_book.format(message.text.strip(), 
+                                                                constants.lib[int(message.text.strip())][0])
         else:
             answer = constants.message_already_returned
         bot.send_message(message.chat.id, answer)
@@ -190,8 +189,8 @@ def manage_book(message):
         pass
     elif message.text == "Взять":
         if get_book_from_shell(current_book_num, message):
-            answer =  "Отлично, книга номер {0} - {1} теперь у тебя".format(str(current_book_num), 
-                                                                            constants.lib[current_book_num][0])
+            answer =  constants.message_you_got_book.format(str(current_book_num), 
+                                                            constants.lib[current_book_num][0])
         else:
             answer = constants.message_already_taken
         bot.send_message(message.chat.id, answer)
@@ -199,8 +198,8 @@ def manage_book(message):
         log(message, answer)
     elif message.text == "Положить":
         if put_book_on_shell(current_book_num, message):
-            answer = "Отлично, книга номер {0} - {1} вернулась на полку. Спасибо!".format(str(current_book_num), 
-                                                                                          constants.lib[current_book_num][0])
+            answer = constants.message_you_returned_book.format(str(current_book_num), 
+                                                                constants.lib[current_book_num][0])
         else: 
             answer = constants.message_already_returned
         bot.send_message(message.chat.id, answer)
