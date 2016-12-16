@@ -227,7 +227,11 @@ def handle_text(message):
     if message.text == constants.message_stupid_bot:
         answer = constants.message_stupid_bot_reply
         bot.send_message(message.chat.id, answer)
-        log(message, answer)        
+        log(message, answer)   
+    if message.chat.id == constants.manager:
+        answer = constants.message_healthcheck
+        bot.send_message(message.chat.id, answer)
+        log(message, answer) 
     else:
         answer = "!no answer"
         log(message, answer)
