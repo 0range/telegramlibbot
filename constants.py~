@@ -1,5 +1,7 @@
 token = "302476657:AAGWcwvSHcbnknJYBx0AgyYqTGezIEjUJFM"
 
+manager = 81593382
+
 message_start_bot = "Bot initialised"
 message_start = """Привет! Я бот-библиотекарь в SME.
 Скажи мне, какую книжку ты хочешь взять, и я тебя запишу ;)
@@ -23,6 +25,9 @@ message_already_taken = "Кажется, эту книгу уже забрали
 message_already_returned = "Кажется, эта книга уже на полке"
 message_bad_number = "Извини, непонятный номер книги :("
 message_what_to_do = "Ты выбрал книгу - что с ней делать?"
+message_suggest_cool = "Круто! Какую книгу хочешь предложить?"
+message_thanks_for_suggest = "Спасибо! Твое пожелание зафиксировано"
+message_suggest_prefix = "Новое предложение книги: "
 
 
 filename_status = "books_status.data"

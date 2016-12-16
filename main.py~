@@ -76,6 +76,7 @@ def put_book_on_shell(book_id, message):
 def book_info(book_id, message):
     return(constants.lib[book_id][0] + "\n " + constants.lib[book_id][1])
 
+
 @bot.message_handler(commands=['start'])
 def handle_text(message):
     answer = constants.message_start
@@ -136,6 +137,21 @@ def handle_text(message):
     bot.send_message(message.chat.id, answer)
     log(message, answer)
 
+@bot.message_handler(commands=['suggest'])
+def handle_text(message):
+    answer = constants.message_suggest_cool
+    sent = bot.send_message(message.chat.id, answer)
+    log(message, answer)
+    bot.register_next_step_handler(sent, get_book_suggestion)
+
+def get_book_suggestion(message):
+    answer = constants.message_thanks_for_suggest
+    bot.send_message(message.chat.id, answer)
+    log(message, answer)
+    answer = constants.message_suggest_prefix + message.text
+    bot.send_message(constants.manager, answer)
+    log(message, answer)
+
 @bot.message_handler(commands=['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'])
 def handle_text(message):
     global current_book_num
@@ -173,9 +189,19 @@ def manage_book(message):
         current_book_num = 0
         log(message, answer)
     elif message.text == "Почитать описание":
-        answer = book_info(current_book_num, message)[0]
+        answer = book_info(current_book_num, message)
         bot.send_message(message.chat.id, answer)
         current_book_num = 0
+        log(message, answer)
+
+@bot.message_handler(content_types=['text'])
+def handle_text(message):
+    if message.text == constants.message_stupid_bot:
+        answer = constants.message_stupid_bot_reply
+        bot.send_message(message.chat.id, answer)
+        log(message, answer)        
+    else:
+        answer = "!no answer"
         log(message, answer)
 
 bot.polling(none_stop=True, interval=0)
