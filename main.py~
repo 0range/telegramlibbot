@@ -173,7 +173,7 @@ def manage_book(message):
         current_book_num = 0
         log(message, answer)
     elif message.text == "Почитать описание":
-        answer = book_info(current_book_num, message)
+        answer = book_info(current_book_num, message)[0]
         bot.send_message(message.chat.id, answer)
         current_book_num = 0
         log(message, answer)
