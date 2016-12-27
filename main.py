@@ -2,6 +2,7 @@ import telebot
 import constants
 from datetime import datetime
 import time
+import sys
 
 print(constants.message_start_bot)
 
@@ -169,7 +170,7 @@ def get_book_suggestion(message):
     bot.send_message(constants.manager, answer)
     log(message, answer)
 
-@bot.message_handler(commands=['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'])
+@bot.message_handler(commands=['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21'])
 def handle_text(message):
     global current_book_num
     answer = constants.message_what_to_do
@@ -228,7 +229,11 @@ def handle_text(message):
         answer = constants.message_stupid_bot_reply
         bot.send_message(message.chat.id, answer)
         log(message, answer)   
-    if message.chat.id == constants.manager:
+    elif message.text.strip() in [':)',';)']:
+        answer = ';)'
+        bot.send_message(message.chat.id, answer)
+        log(message, answer)
+    elif message.chat.id == constants.manager:
         answer = constants.message_healthcheck
         bot.send_message(message.chat.id, answer)
         log(message, answer) 
@@ -236,4 +241,13 @@ def handle_text(message):
         answer = "!no answer"
         log(message, answer)
 
-bot.polling(none_stop=True, interval=0)
+
+
+for i in range(100):
+    try:
+        bot.polling(none_stop=True, interval=1, timeout=60)
+    except:
+        print("Unexpected error:", sys.exc_info())
+        with open("exceptions.log", "a") as errorlog:
+            errorlog.write(str(datetime.now()) + " Unexpected error:" + str(sys.exc_info()) + "\n")
+

@@ -60,6 +60,12 @@ lib = dict({
 12: ["Г.Кеннеди. Договориться можно обо всем","Как добиваться максимума в любых переговорах https://www.alpinabook.ru/catalog/NegotiationsBusinessCommunication/66435/",""],
 13: ["Эдуард Френкель. Любовь и математика","Сердце скрытой реальности https://www.ozon.ru/context/detail/id/32224115/ \nP.S. Эта книга на полке букшеринга, то есть принадлежит кому-то из команды",""],
 14: ["Stephen Few. Information dashboard design","Пособие по эффективной визуализации (на английском) https://www.amazon.com/Information-Dashboard-Design-Effective-Communication/dp/0596100167 \nP.S. Эта книга на полке букшеринга, то есть принадлежит кому-то из команды",""],
-15: ["Джин Желязны. Говори на языке диаграм","Пособие по визуальным коммуникациям http://www.mann-ivanov-ferber.ru/books/mif/026/ \nP.S. Эта книга на полке букшеринга, то есть принадлежит кому-то из команды",""]
+15: ["Джин Желязны. Говори на языке диаграм","Пособие по визуальным коммуникациям http://www.mann-ivanov-ferber.ru/books/mif/026/ \nP.S. Эта книга на полке букшеринга, то есть принадлежит кому-то из команды",""],
+16: ["Essetial Kanban Condensed","Краткое пособие по Kanban от автора полного пособия http://leankanban.com/guide/",""],
+17: ["Хенрик Книберг. Scrum и XP: заметки с передовой","Рассказ о том, как строится скрам в одной компании http://agilerussia.ru/books/scrum_xp-from-the-trenches/",""],
+18: ["Генри Форд. Моя жизнь, мои достижения","Автобиография великого Генри Форда. Рекомендована Олегом Тиньковым http://www.mann-ivanov-ferber.ru/books/history/my-life-and-work/",""],
+19: ["Олег Тиньков. Как стать бизнесменом","Вторая книга основателя Тинькофф Банка http://www.mann-ivanov-ferber.ru/books/paperbook/kak-stat-biznesmenom/",""],
+20: ["В.Чан Ким, Рене Моборн. Стратегия голубого океана","Как найти или создать рынок, свободный от других игроков http://www.mann-ivanov-ferber.ru/books/paperbook/blueoceanstrategy/",""],
+21: ["Роман Пихлер. Управление продуктом в SCRUM","Руководство по гибкому управлению продуктом на основе Scrum — от одного из ведущих экспертов по методике http://www.mann-ivanov-ferber.ru/books/upravlenie-produktom-v-scrum/",""]
 })
 
