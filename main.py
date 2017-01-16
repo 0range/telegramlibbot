@@ -170,7 +170,7 @@ def get_book_suggestion(message):
     bot.send_message(constants.manager, answer)
     log(message, answer)
 
-@bot.message_handler(commands=['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21'])
+@bot.message_handler(commands=['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23'])
 def handle_text(message):
     global current_book_num
     answer = constants.message_what_to_do
@@ -250,4 +250,3 @@ for i in range(100):
         print("Unexpected error:", sys.exc_info())
         with open("exceptions.log", "a") as errorlog:
             errorlog.write(str(datetime.now()) + " Unexpected error:" + str(sys.exc_info()) + "\n")
-
