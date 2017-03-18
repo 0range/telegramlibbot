@@ -19,6 +19,9 @@ class library(object):
   def show(self):
     pprint(self.library)
 
+  def count(self):
+    return(len(self.library["list"]))
+
   def bookInfo(self, num):
     return(self.library["list"][num - 1][str(num)][0] + "\n\n" + self.library["list"][num - 1][str(num)][1])
 

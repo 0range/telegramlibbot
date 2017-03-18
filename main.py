@@ -27,11 +27,12 @@ def log(message, answer):
                                        answer))
 
 def is_number(text):
+    books = library(constants.book_list)
     a = 0
     range_bool = True
     try:
         a = int(text)
-        range_bool = a in constants.lib
+        range_bool = a in range(books.count())
     except:
         range_bool = False
     num_bool = (text.strip() == str(a))
@@ -124,8 +125,8 @@ def handle_text(message):
 def take_book(message):
     if is_number(message.text):
         if get_book_from_shell(int(message.text), message):
-            answer =  constants.message_you_got_book.format(message.text.strip(), 
-                                                            constants.lib[int(message.text.strip())][0])
+            answer =  constants.message_you_got_book.format(message.text.strip())#, 
+                                                            #constants.lib[int(message.text.strip())][0])
         else:
             answer = constants.message_already_taken
         bot.send_message(message.chat.id, answer)
@@ -145,8 +146,8 @@ def handle_text(message):
 def return_book(message):
     if is_number(message.text):
         if put_book_on_shell(int(message.text), message):
-            answer = constants.message_you_returned_book.format(message.text.strip(), 
-                                                                constants.lib[int(message.text.strip())][0])
+            answer = constants.message_you_returned_book.format(message.text.strip())#, 
+                                                                #constants.lib[int(message.text.strip())][0])
         else:
             answer = constants.message_already_returned
         bot.send_message(message.chat.id, answer)
@@ -177,9 +178,10 @@ def get_book_suggestion(message):
     bot.send_message(constants.manager, answer)
     log(message, answer)
 
-#refactoring is here
-
-@bot.message_handler(commands=['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25'])
+@bot.message_handler(commands=['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25',
+'26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50',
+'51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75',
+'76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99'])
 def handle_text(message):
     global current_book_num
     answer = constants.message_what_to_do
@@ -199,8 +201,8 @@ def manage_book(message):
         pass
     elif message.text == "Взять":
         if get_book_from_shell(current_book_num, message):
-            answer =  constants.message_you_got_book.format(str(current_book_num), 
-                                                            constants.lib[current_book_num][0])
+            answer =  constants.message_you_got_book.format(str(current_book_num))#, 
+                                                            #constants.lib[current_book_num][0])
         else:
             answer = constants.message_already_taken
         bot.send_message(message.chat.id, answer)
@@ -208,8 +210,8 @@ def manage_book(message):
         log(message, answer)
     elif message.text == "Положить":
         if put_book_on_shell(current_book_num, message):
-            answer = constants.message_you_returned_book.format(str(current_book_num), 
-                                                                constants.lib[current_book_num][0])
+            answer = constants.message_you_returned_book.format(str(current_book_num))#, 
+                                                                #constants.lib[current_book_num][0])
         else: 
             answer = constants.message_already_returned
         bot.send_message(message.chat.id, answer)
@@ -231,6 +233,17 @@ def handler_text(message):
         answer = constants.message_collection_forbidden
         bot.send_message(constants.manager, answer)
         log(message, answer)  
+
+@bot.message_handler(command=['add'])
+def handler_text(message):
+    if message.from_user.id != constants.manager:
+        answer = constants.message_addbook_mistaken
+        bot.send_message(message.chat.id, answer)
+        log(message, answer)
+    else:
+        answer = constants.message_addbook_name
+        bot.send_message(message.chat.id, answer)
+        log(message, answer)
 
 @bot.message_handler(content_types=['text'])
 def handle_text(message):
