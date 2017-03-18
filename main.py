@@ -3,6 +3,8 @@ import constants
 from datetime import datetime
 import time
 import sys
+from library import library
+
 
 print(constants.message_start_bot)
 
@@ -36,17 +38,21 @@ def is_number(text):
     return num_bool & range_bool
 
 def list_of_books():
-    books = dict()
+    books = library(constants.filename_book_list)
+
     res = "Список книг:\n"
-    with open(constants.filename_status,'r') as book_file:
-        for line in book_file:
-            books[int(line.split(',')[0])] = [line.split(',')[1], line.split(',')[2]]
-    for item in constants.lib:
-        res += "/" + str(item) + " : "
-        if int(books[item][0]) != 0:
-            res += " (отдана) "
-        res += constants.lib[item][0]
+    for string in books.list():
+        res += string
         res += "\n"
+    #with open(constants.filename_status,'r') as book_file:
+    #    for line in book_file:
+    #        books[int(line.split(',')[0])] = [line.split(',')[1], line.split(',')[2]]
+    #for item in constants.lib:
+    #    res += "/" + str(item) + " : "
+    #    if int(books[item][0]) != 0:
+    #        res += " (отдана) "
+    #    res += constants.lib[item][0]
+    #    res += "\n"
     return res
 
 def get_book_from_shell(book_id, message):
@@ -80,7 +86,8 @@ def put_book_on_shell(book_id, message):
     return True
 
 def book_info(book_id, message):
-    return(constants.lib[book_id][0] + "\n " + constants.lib[book_id][1])
+    books = library(constants.filename_book_list)
+    return(books.bookInfo(book_id))#constants.lib[book_id][0] + "\n " + constants.lib[book_id][1])
 
 def collect(message):
     if message.from_user.id != constants.manager:
@@ -170,6 +177,8 @@ def get_book_suggestion(message):
     bot.send_message(constants.manager, answer)
     log(message, answer)
 
+#refactoring is here
+
 @bot.message_handler(commands=['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25'])
 def handle_text(message):
     global current_book_num
@@ -243,7 +252,7 @@ def handle_text(message):
 
 
 
-for i in range(100):
+for i in range(1):
     try:
         bot.polling(none_stop=True, interval=1, timeout=60)
     except:

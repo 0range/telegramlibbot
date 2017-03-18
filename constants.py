@@ -1,9 +1,10 @@
-token = "302476657:AAGWcwvSHcbnknJYBx0AgyYqTGezIEjUJFM"
+token = "341986347:AAFapU55A4CySynQWbPJNblDNebqcR2UCkI"
 
 manager = 81593382
 collection_time = 1209600
 
 filename_status = "books_status.data"
+filename_book_list = "book_list.json"
 filename_log_name = "log"
 filename_log_extension = ".log"
 
@@ -17,6 +18,7 @@ message_start = """Привет! Я бот-библиотекарь в SME.
 /take - Взять книгу с полки
 /return - Вернуть книгу на полку
 /list - Посмотреть, что лежит на полке
+/suggest - Предложить добавить книгу на полку
 
 и, конечно
 /help - Список команд"""
@@ -24,6 +26,7 @@ message_help =  """Напоминаю:
 /take - Взять книгу с полки
 /return - Вернуть книгу на полку
 /list - Посмотреть, что лежит на полке
+/suggest - Предложить добавить книгу
 
 /help - Список команд"""
 message_tell_book_number_get = "Скажи номер книги, которую хочешь взять"
