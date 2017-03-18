@@ -234,16 +234,34 @@ def handler_text(message):
         bot.send_message(constants.manager, answer)
         log(message, answer)  
 
-@bot.message_handler(command=['add'])
+@bot.message_handler(commands=['add'])
 def handler_text(message):
-    if message.from_user.id != constants.manager:
-        answer = constants.message_addbook_mistaken
-        bot.send_message(message.chat.id, answer)
-        log(message, answer)
-    else:
+    if message.from_user.id == constants.manager:
         answer = constants.message_addbook_name
-        bot.send_message(message.chat.id, answer)
-        log(message, answer)
+    else:
+        answer = constants.message_addbook_mistaken
+    sent = bot.send_message(message.chat.id, answer)
+    log(message, answer)
+    bot.register_next_step_handler(sent, add_new_book)
+
+def add_new_book(message):
+    global new_book 
+    new_book = ["","",""]
+    new_book[0] = message.text
+    answer = constants.message_addbook_description
+    sent = bot.send_message(message.chat.id, answer)
+    log(message, answer)
+    bot.register_next_step_handler(sent, add_new_book_description)
+
+def add_new_book_description(message):
+    global new_book
+    new_book[1] = message.text
+    books = library(constants.filename_book_list)
+    books.add(new_book)
+    answer = constants.message_addbook_success
+    bot.send_message(message.chat.id, answer)
+    log(message, answer)
+
 
 @bot.message_handler(content_types=['text'])
 def handle_text(message):
