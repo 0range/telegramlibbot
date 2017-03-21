@@ -41,19 +41,21 @@ def is_number(text):
 def list_of_books():
     books = library(constants.filename_book_list)
 
+    book_statuses = dict()
+    with open(constants.filename_status,'r') as book_file:
+        for line in book_file:
+            book_statuses[int(line.split(',')[0])] = [line.split(',')[1], line.split(',')[2]]
+
     res = "Список книг:\n"
-    for string in books.list():
-        res += string
+    
+    for item in books.list():
+        
+        if int(book_statuses[item[0]][0]) != 0:
+            res += "/" + str(item[0]) + " (отдана) " + item[1]
+        else:
+            res += "/" + str(item[0]) + " " + item[1]
         res += "\n"
-    #with open(constants.filename_status,'r') as book_file:
-    #    for line in book_file:
-    #        books[int(line.split(',')[0])] = [line.split(',')[1], line.split(',')[2]]
-    #for item in constants.lib:
-    #    res += "/" + str(item) + " : "
-    #    if int(books[item][0]) != 0:
-    #        res += " (отдана) "
-    #    res += constants.lib[item][0]
-    #    res += "\n"
+    
     return res
 
 def get_book_from_shell(book_id, message):
@@ -287,6 +289,9 @@ for i in range(100):
     try:
         bot.polling(none_stop=True, interval=1, timeout=60)
     except:
+        bot.send_message(constants.manager, "Bot exception: " + str(i+1))
+        bot.send_message(constants.manager, str(sys.exc_info()))
         print("Unexpected error:", sys.exc_info())
         with open("exceptions.log", "a") as errorlog:
             errorlog.write(str(datetime.now()) + " Unexpected error:" + str(sys.exc_info()) + "\n")
+

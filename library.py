@@ -29,7 +29,7 @@ class library(object):
     ind = 0
     for item in self.library["list"]:
       ind += 1
-      yield("/" + str(ind) + ": " + item[str(ind)][0])
+      yield([ind, item[str(ind)][0]])
 
   def dump(self):
     with open(self.filename, 'w') as outfile:
