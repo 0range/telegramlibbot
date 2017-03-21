@@ -27,7 +27,7 @@ def log(message, answer):
                                        answer))
 
 def is_number(text):
-    books = library(constants.book_list)
+    books = library(constants.filename_book_list)
     a = 0
     range_bool = True
     try:

@@ -1,4 +1,4 @@
-token = "302476657:AAGWcwvSHcbnknJYBx0AgyYqTGezIEjUJFM"
+token = "341986347:AAFapU55A4CySynQWbPJNblDNebqcR2UCkI"
 
 manager = 81593382
 collection_time = 1209600
