@@ -88,6 +88,13 @@ def put_book_on_shell(book_id, message):
             book_file.write(str(item) + "," + books[item][0] + "," + books[item][1])
     return True
 
+def ping_reader(book_id):
+    books = dict()
+    with open(constants.filename_status,'r') as book_file:
+        for line in book_file:
+            books[int(line.split(',')[0])] = [line.split(',')[1], line.split(',')[2]]
+    return books[book_id][0]
+
 def book_info(book_id, message):
     books = library(constants.filename_book_list)
     return(books.bookInfo(book_id))#constants.lib[book_id][0] + "\n " + constants.lib[book_id][1])
@@ -192,6 +199,7 @@ def handle_text(message):
     user_markup = telebot.types.ReplyKeyboardMarkup(True, True)
     user_markup.row('Взять', 'Положить')
     user_markup.row('Почитать описание')
+    user_markup.row('Толкнуть читающего')
     sent = bot.send_message(message.chat.id, answer, reply_markup=user_markup)
     log(message, answer)
     bot.register_next_step_handler(sent, manage_book)
@@ -224,6 +232,17 @@ def manage_book(message):
         bot.send_message(message.chat.id, answer)
         current_book_num = 0
         log(message, answer)
+    elif message.text == "Толкнуть читающего":
+        result = ping_reader(current_book_num)
+        if int(result) == 0:
+            answer = constants.message_ping_requester_unsuccessfull    
+        else:
+            answer = constants.message_ping_requester_successfull
+            ping_message = constants.message_ping_reader.format(str(current_book_num))
+            bot.send_message(result, ping_message)
+        bot.send_message(message.chat.id, answer)
+        current_book_num = 0
+        log(message, answer)    
 
 @bot.message_handler(commands=['collect'])
 def handler_text(message):
@@ -285,7 +304,7 @@ def handle_text(message):
 
 
 
-for i in range(100):
+for i in range(1):
     try:
         bot.polling(none_stop=True, interval=1, timeout=60)
     except:
