@@ -4,6 +4,7 @@ from datetime import datetime
 import time
 import sys
 from library import library
+import json
 
 
 print(constants.message_start_bot)
@@ -18,6 +19,10 @@ def logprint(text):
         logfile.write(text)
     print(text)
 
+def logOperation(string):
+    with open(constants.filename_log_operation, 'a') as logfile:
+        logfile.write(str(datetime.now()) + " " + string + " \n")
+
 def log(message, answer):
     logprint(str(datetime.now()) + " ")
     logprint(constants.log_text.format(message.from_user.first_name,
@@ -25,6 +30,47 @@ def log(message, answer):
                                        str(message.from_user.id),
                                        message.text,
                                        answer))
+
+def subscribeForReturn(book_id, message):
+    subscriptions = dict()
+    
+    try:
+        with open(constants.filename_return_subscriptions) as data_file:
+            subscriptions = json.load(data_file)
+    except:
+        pass
+
+    if str(book_id) in subscriptions:
+        if message.from_user.id in subscriptions[str(book_id)]:
+            pass
+        else:
+            subscriptions[str(book_id)].append(message.from_user.id)
+    else:    
+        subscriptions[str(book_id)] = [message.from_user.id]
+
+    with open(constants.filename_return_subscriptions, 'w') as outfile:
+        json.dump(subscriptions, outfile)
+
+    return True
+
+def checkSubscriptionsForReturn(book_id, message):
+    subscriptions = dict()
+    result = []
+
+    try:
+        with open(constants.filename_return_subscriptions) as data_file:
+            subscriptions = json.load(data_file)
+    except:
+        pass
+
+    if str(book_id) in subscriptions:
+        result = subscriptions[str(book_id)]
+        subscriptions[str(book_id)] = []
+
+    with open(constants.filename_return_subscriptions, 'w') as outfile:
+        json.dump(subscriptions, outfile)
+    
+    return result
 
 def is_number(text):
     books = library(constants.filename_book_list)
@@ -63,14 +109,29 @@ def get_book_from_shell(book_id, message):
     with open(constants.filename_status,'r') as book_file:
         for line in book_file:
             books[int(line.split(',')[0])] = [line.split(',')[1], line.split(',')[2]]
-    print(books)
+    #print(books)
+
     if int(books[book_id][0]) != 0:
+        logOperation("operation=Take book=" + str(book_id) + " success=False user=" + str(message.from_user.id))
         return False
+    
+    #print("Getting book from shelf")
+    taken_books_counter = 0
+    for book in books:
+        print(books[book])
+        if int(books[book][0]) == message.from_user.id:
+            taken_books_counter += 1
+    if taken_books_counter >= 2:
+        logOperation("operation=Take book=" + str(book_id) + " success=False user=" + str(message.from_user.id)) 
+        return False
+    #print(taken_books_counter)
+    
     books[book_id][0] = str(message.from_user.id)
     books[book_id][1] = str(round(time.time())) + "\n"
     with open(constants.filename_status,'w') as book_file:
         for item in books:
             book_file.write(str(item) + "," + books[item][0] + "," + books[item][1])
+    logOperation("operation=Take book=" + str(book_id) + " success=True user=" + str(message.from_user.id))
     return True
 
 def put_book_on_shell(book_id, message):
@@ -78,25 +139,31 @@ def put_book_on_shell(book_id, message):
     with open(constants.filename_status,'r') as book_file:
         for line in book_file:
             books[int(line.split(',')[0])] = [line.split(',')[1], line.split(',')[2]]
-    print(books)
+    #print(books)
+
     if int(books[book_id][0]) == 0:
+        logOperation("operation=Put book=" + str(book_id) + " success=False user=" + str(message.from_user.id))
         return False
+
     books[book_id][0] = "0"
     books[book_id][1] = str(round(time.time())) + "\n"
     with open(constants.filename_status,'w') as book_file:
         for item in books:
             book_file.write(str(item) + "," + books[item][0] + "," + books[item][1])
+    logOperation("operation=Put book=" + str(book_id) + " success=True user=" + str(message.from_user.id))
     return True
 
-def ping_reader(book_id):
+def ping_reader(book_id, message):
     books = dict()
     with open(constants.filename_status,'r') as book_file:
         for line in book_file:
             books[int(line.split(',')[0])] = [line.split(',')[1], line.split(',')[2]]
+    logOperation("operation=Ping book=" + str(book_id) + " success=True user=" + str(message.from_user.id))
     return books[book_id][0]
 
 def book_info(book_id, message):
     books = library(constants.filename_book_list)
+    logOperation("operation=Info book=" + str(book_id) + " success=True user=" + str(message.from_user.id))
     return(books.bookInfo(book_id))#constants.lib[book_id][0] + "\n " + constants.lib[book_id][1])
 
 def collect(message):
@@ -157,6 +224,9 @@ def return_book(message):
         if put_book_on_shell(int(message.text), message):
             answer = constants.message_you_returned_book.format(message.text.strip())#, 
                                                                 #constants.lib[int(message.text.strip())][0])
+            waiters_waiting = checkSubscriptionsForReturn(int(message.text), message)
+            for waiter in waiters_waiting:
+                bot.send_message(waiter, constants.message_subscribe_returned.format(message.text))
         else:
             answer = constants.message_already_returned
         bot.send_message(message.chat.id, answer)
@@ -197,9 +267,18 @@ def handle_text(message):
     current_book_num = int(message.text[1:].strip())
     #print(current_book_num)
     user_markup = telebot.types.ReplyKeyboardMarkup(True, True)
-    user_markup.row('Взять', 'Положить')
     user_markup.row('Почитать описание')
-    user_markup.row('Толкнуть читающего')
+
+    books = dict()
+    with open(constants.filename_status,'r') as book_file:
+        for line in book_file:
+            books[int(line.split(',')[0])] = [line.split(',')[1], line.split(',')[2]]
+    #print(books)
+
+    if int(books[current_book_num][0]) != 0:
+        user_markup.row('Подписаться на возврат')
+        user_markup.row('Толкнуть читающего')
+    user_markup.row('Взять', 'Положить')
     sent = bot.send_message(message.chat.id, answer, reply_markup=user_markup)
     log(message, answer)
     bot.register_next_step_handler(sent, manage_book)
@@ -222,6 +301,9 @@ def manage_book(message):
         if put_book_on_shell(current_book_num, message):
             answer = constants.message_you_returned_book.format(str(current_book_num))#, 
                                                                 #constants.lib[current_book_num][0])
+            waiters_waiting = checkSubscriptionsForReturn(current_book_num, message)
+            for waiter in waiters_waiting:
+                bot.send_message(waiter, constants.message_subscribe_returned.format(str(current_book_num)))
         else: 
             answer = constants.message_already_returned
         bot.send_message(message.chat.id, answer)
@@ -233,7 +315,7 @@ def manage_book(message):
         current_book_num = 0
         log(message, answer)
     elif message.text == "Толкнуть читающего":
-        result = ping_reader(current_book_num)
+        result = ping_reader(current_book_num, message)
         if int(result) == 0:
             answer = constants.message_ping_requester_unsuccessfull    
         else:
@@ -243,6 +325,12 @@ def manage_book(message):
         bot.send_message(message.chat.id, answer)
         current_book_num = 0
         log(message, answer)    
+    elif message.text == "Подписаться на возврат":
+        subscribeForReturn(current_book_num, message)
+        answer = constants.message_subscribe_successfull
+        bot.send_message(message.chat.id, answer)
+        current_book_num = 0
+        log(message, answer)  
 
 @bot.message_handler(commands=['collect'])
 def handler_text(message):
