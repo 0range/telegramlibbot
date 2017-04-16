@@ -392,7 +392,7 @@ def handle_text(message):
 
 
 
-for i in range(1):
+for i in range(100):
     try:
         bot.polling(none_stop=True, interval=1, timeout=60)
     except:
