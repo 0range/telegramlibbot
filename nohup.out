@@ -1,0 +1,2110 @@
+Bot initialised
+2017-03-21 20:54:31.035274 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/list" answer="Список книг:
+/1 Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв
+/3 Михаил Литвак. Командовать или подчиняться
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок
+/6 Эрик Рис. Бизнес с нуля
+/7 (отдана) Ицхак Адизес. Идеальный руководитель
+/8 Ицхак Адизес. Развитие лидеров
+/9 Олег Тиньков. Я такой как все
+/10 Олег Тиньков. Я такой как все
+/11 Ф.Брукс. Мифический человеко-месяц
+/12 Г.Кеннеди. Договориться можно обо всем
+/13 Эдуард Френкель. Любовь и математика
+/14 Stephen Few. Information dashboard design
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой
+/18 Генри Форд. Моя жизнь, мои достижения
+/19 Олег Тиньков. Как стать бизнесменом
+/20 (отдана) В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 (отдана) Бретт Кинг. Банк 3.0
+/23 (отдана) Фредерик Лалу. Открывая организации будущего
+/24 Максим Богатырев. 45 татуировок продавана
+/25 (отдана) Максим Богатырев. 45 татуировок менеджера
+/26 Ицхак Адизес. Управление жизненным циклом корпорации
+/27 (отдана) Майкл Кон. Пользовательские истории
+/28 (отдана) Саймон Синек. Начни с вопроса "Почему?"
+" 
+
+2017-03-22 06:49:32.865838 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Почитать описание" answer="У меня все хорошо" 
+
+2017-03-22 08:27:30.380180 
+name="Anastasia" surname="Q" id=232897796 text="/start" answer="Привет! Я бот-библиотекарь в SME.
+Скажи мне, какую книжку ты хочешь взять, и я тебя запишу ;)
+
+Пообщаться со мной можно так:
+/take - Взять книгу с полки
+/return - Вернуть книгу на полку
+/list - Посмотреть, что лежит на полке
+/suggest - Предложить добавить книгу на полку
+
+и, конечно
+/help - Список команд" 
+
+2017-03-22 08:27:37.543895 
+name="Anastasia" surname="Q" id=232897796 text="/list" answer="Список книг:
+/1 Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв
+/3 Михаил Литвак. Командовать или подчиняться
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок
+/6 Эрик Рис. Бизнес с нуля
+/7 (отдана) Ицхак Адизес. Идеальный руководитель
+/8 Ицхак Адизес. Развитие лидеров
+/9 Олег Тиньков. Я такой как все
+/10 Олег Тиньков. Я такой как все
+/11 Ф.Брукс. Мифический человеко-месяц
+/12 Г.Кеннеди. Договориться можно обо всем
+/13 Эдуард Френкель. Любовь и математика
+/14 Stephen Few. Information dashboard design
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой
+/18 Генри Форд. Моя жизнь, мои достижения
+/19 Олег Тиньков. Как стать бизнесменом
+/20 (отдана) В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 (отдана) Бретт Кинг. Банк 3.0
+/23 (отдана) Фредерик Лалу. Открывая организации будущего
+/24 Максим Богатырев. 45 татуировок продавана
+/25 (отдана) Максим Богатырев. 45 татуировок менеджера
+/26 Ицхак Адизес. Управление жизненным циклом корпорации
+/27 (отдана) Майкл Кон. Пользовательские истории
+/28 (отдана) Саймон Синек. Начни с вопроса "Почему?"
+" 
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/packages/urllib3/connectionpool.py", line 391, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/packages/urllib3/connectionpool.py", line 387, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/local/lib/python3.5/http/client.py", line 1198, in getresponse
+    response.begin()
+  File "/usr/local/lib/python3.5/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/lib/python3.5/http/client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/local/lib/python3.5/socket.py", line 576, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/local/lib/python3.5/ssl.py", line 937, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/local/lib/python3.5/ssl.py", line 799, in read
+    return self._sslobj.read(len, buffer)
+  File "/usr/local/lib/python3.5/ssl.py", line 583, in read
+    v = self._sslobj.read(len, buffer)
+socket.timeout: The read operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/packages/urllib3/connectionpool.py", line 643, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/packages/urllib3/util/retry.py", line 334, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/packages/urllib3/connectionpool.py", line 594, in urlopen
+    chunked=chunked)
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/packages/urllib3/connectionpool.py", line 393, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/packages/urllib3/connectionpool.py", line 313, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+requests.packages.urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=70)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 397, in <module>
+    bot.polling(none_stop=True, interval=1, timeout=60)
+  File "/usr/local/lib/python3.5/site-packages/pyTelegramBotAPI-2.3.0-py3.5.egg/telebot/__init__.py", line 222, in polling
+  File "/usr/local/lib/python3.5/site-packages/pyTelegramBotAPI-2.3.0-py3.5.egg/telebot/__init__.py", line 245, in __threaded_polling
+  File "/usr/local/lib/python3.5/site-packages/pyTelegramBotAPI-2.3.0-py3.5.egg/telebot/util.py", line 73, in raise_exceptions
+  File "/usr/local/lib/python3.5/site-packages/six-1.10.0-py3.5.egg/six.py", line 686, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/site-packages/pyTelegramBotAPI-2.3.0-py3.5.egg/telebot/util.py", line 54, in run
+  File "/usr/local/lib/python3.5/site-packages/pyTelegramBotAPI-2.3.0-py3.5.egg/telebot/__init__.py", line 136, in __retrieve_updates
+  File "/usr/local/lib/python3.5/site-packages/pyTelegramBotAPI-2.3.0-py3.5.egg/telebot/__init__.py", line 106, in get_updates
+  File "/usr/local/lib/python3.5/site-packages/pyTelegramBotAPI-2.3.0-py3.5.egg/telebot/apihelper.py", line 156, in get_updates
+  File "/usr/local/lib/python3.5/site-packages/pyTelegramBotAPI-2.3.0-py3.5.egg/telebot/apihelper.py", line 35, in _make_request
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/adapters.py", line 499, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=70)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/packages/urllib3/connection.py", line 138, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/packages/urllib3/util/connection.py", line 75, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/local/lib/python3.5/socket.py", line 733, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/packages/urllib3/connectionpool.py", line 594, in urlopen
+    chunked=chunked)
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/packages/urllib3/connectionpool.py", line 350, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/packages/urllib3/connectionpool.py", line 835, in _validate_conn
+    conn.connect()
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/packages/urllib3/connection.py", line 281, in connect
+    conn = self._new_conn()
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/packages/urllib3/connection.py", line 147, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+requests.packages.urllib3.exceptions.NewConnectionError: <requests.packages.urllib3.connection.VerifiedHTTPSConnection object at 0x7f4b2848ae80>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/packages/urllib3/connectionpool.py", line 643, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/packages/urllib3/util/retry.py", line 363, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+requests.packages.urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot302476657:AAGWcwvSHcbnknJYBx0AgyYqTGezIEjUJFM/sendMessage?chat_id=81593382&text=Bot+exception%3A+1 (Caused by NewConnectionError('<requests.packages.urllib3.connection.VerifiedHTTPSConnection object at 0x7f4b2848ae80>: Failed to establish a new connection: [Errno -2] Name or service not known',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 399, in <module>
+    bot.send_message(constants.manager, "Bot exception: " + str(i+1))
+  File "/usr/local/lib/python3.5/site-packages/pyTelegramBotAPI-2.3.0-py3.5.egg/telebot/__init__.py", line 397, in send_message
+  File "/usr/local/lib/python3.5/site-packages/pyTelegramBotAPI-2.3.0-py3.5.egg/telebot/apihelper.py", line 116, in send_message
+  File "/usr/local/lib/python3.5/site-packages/pyTelegramBotAPI-2.3.0-py3.5.egg/telebot/apihelper.py", line 35, in _make_request
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.5/site-packages/requests-2.12.4-py3.5.egg/requests/adapters.py", line 487, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot302476657:AAGWcwvSHcbnknJYBx0AgyYqTGezIEjUJFM/sendMessage?chat_id=81593382&text=Bot+exception%3A+1 (Caused by NewConnectionError('<requests.packages.urllib3.connection.VerifiedHTTPSConnection object at 0x7f4b2848ae80>: Failed to establish a new connection: [Errno -2] Name or service not known',))
+2017-03-23 02:18:32,616 (__init__.py:250 MainThread) ERROR - TeleBot: "A request to the Telegram API was unsuccessful. The server returned HTTP 502 Bad Gateway. Response body:
+[b'<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor="white">\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.10.0</center>\r\n</body>\r\n</html>\r\n']"
+2017-03-23 02:18:33,918 (__init__.py:250 MainThread) ERROR - TeleBot: "A request to the Telegram API was unsuccessful. The server returned HTTP 502 Bad Gateway. Response body:
+[b'<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor="white">\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.10.0</center>\r\n</body>\r\n</html>\r\n']"
+2017-03-23 02:18:35,469 (__init__.py:250 MainThread) ERROR - TeleBot: "A request to the Telegram API was unsuccessful. The server returned HTTP 502 Bad Gateway. Response body:
+[b'<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor="white">\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.10.0</center>\r\n</body>\r\n</html>\r\n']"
+2017-03-23 02:18:37,523 (__init__.py:250 MainThread) ERROR - TeleBot: "A request to the Telegram API was unsuccessful. The server returned HTTP 502 Bad Gateway. Response body:
+[b'<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor="white">\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.10.0</center>\r\n</body>\r\n</html>\r\n']"
+Bot initialised
+2017-03-22 14:17:12.918524 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text=":)" answer=";)" 
+
+2017-03-22 14:26:59.371475 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text=":)" answer=";)" 
+
+2017-03-22 14:27:01.568322 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text=";)" answer=";)" 
+
+2017-03-22 16:28:48.748651 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text=":)" answer=";)" 
+
+2017-03-23 18:13:00.702943 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Почитать описание" answer="У меня все хорошо" 
+
+2017-03-23 18:13:01.720085 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Рро" answer="У меня все хорошо" 
+
+2017-03-23 18:13:01.852593 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text=":(" answer="У меня все хорошо" 
+
+2017-03-23 18:13:14.345347 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text=":)" answer=";)" 
+
+2017-03-24 12:04:14.959157 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text=":)" answer=";)" 
+
+2017-03-24 18:26:50.662374 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Почитать описание" answer="У меня все хорошо" 
+
+2017-03-24 18:26:55.624727 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/return" answer="Скажи номер книги, которую возвращаешь" 
+
+2017-03-24 18:26:57.931292 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="20" answer="У меня все хорошо" 
+
+2017-03-24 18:26:58.130329 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="20" answer="Отлично, книга номер 20 вернулась на полку. Спасибо!" 
+
+2017-03-24 18:27:26.155029 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/list" answer="Список книг:
+/1 Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв
+/3 Михаил Литвак. Командовать или подчиняться
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок
+/6 Эрик Рис. Бизнес с нуля
+/7 (отдана) Ицхак Адизес. Идеальный руководитель
+/8 Ицхак Адизес. Развитие лидеров
+/9 Олег Тиньков. Я такой как все
+/10 Олег Тиньков. Я такой как все
+/11 Ф.Брукс. Мифический человеко-месяц
+/12 Г.Кеннеди. Договориться можно обо всем
+/13 Эдуард Френкель. Любовь и математика
+/14 Stephen Few. Information dashboard design
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой
+/18 Генри Форд. Моя жизнь, мои достижения
+/19 Олег Тиньков. Как стать бизнесменом
+/20 В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 (отдана) Бретт Кинг. Банк 3.0
+/23 (отдана) Фредерик Лалу. Открывая организации будущего
+/24 Максим Богатырев. 45 татуировок продавана
+/25 (отдана) Максим Богатырев. 45 татуировок менеджера
+/26 Ицхак Адизес. Управление жизненным циклом корпорации
+/27 (отдана) Майкл Кон. Пользовательские истории
+/28 (отдана) Саймон Синек. Начни с вопроса "Почему?"
+" 
+
+2017-03-24 18:29:07.528544 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/27" answer="Ты выбрал книгу - что с ней делать?" 
+
+2017-03-24 18:29:11.903022 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Положить" answer="У меня все хорошо" 
+
+2017-03-24 18:29:11.929351 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Положить" answer="Отлично, книга номер 27 вернулась на полку. Спасибо!" 
+
+2017-03-24 18:29:37.705392 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/list" answer="Список книг:
+/1 Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв
+/3 Михаил Литвак. Командовать или подчиняться
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок
+/6 Эрик Рис. Бизнес с нуля
+/7 (отдана) Ицхак Адизес. Идеальный руководитель
+/8 Ицхак Адизес. Развитие лидеров
+/9 Олег Тиньков. Я такой как все
+/10 Олег Тиньков. Я такой как все
+/11 Ф.Брукс. Мифический человеко-месяц
+/12 Г.Кеннеди. Договориться можно обо всем
+/13 Эдуард Френкель. Любовь и математика
+/14 Stephen Few. Information dashboard design
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой
+/18 Генри Форд. Моя жизнь, мои достижения
+/19 Олег Тиньков. Как стать бизнесменом
+/20 В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 (отдана) Бретт Кинг. Банк 3.0
+/23 (отдана) Фредерик Лалу. Открывая организации будущего
+/24 Максим Богатырев. 45 татуировок продавана
+/25 (отдана) Максим Богатырев. 45 татуировок менеджера
+/26 Ицхак Адизес. Управление жизненным циклом корпорации
+/27 Майкл Кон. Пользовательские истории
+/28 (отдана) Саймон Синек. Начни с вопроса "Почему?"
+" 
+
+2017-03-24 18:29:50.709306 
+name="VodnyjLibBot" surname="None" id=302476657 text="Добрый день. Извиняюсь за назойливость, но у нас принято брать книгу не больше чем на две недели. Пожалуйста, верните книгу номер 7 на полку, если не читаете ее" answer="Добрый день. Извиняюсь за назойливость, но у нас принято брать книгу не больше чем на две недели. Пожалуйста, верните книгу номер 7 на полку, если не читаете ее" 
+
+2017-03-24 18:29:50.783428 
+name="VodnyjLibBot" surname="None" id=302476657 text="Добрый день. Извиняюсь за назойливость, но у нас принято брать книгу не больше чем на две недели. Пожалуйста, верните книгу номер 15 на полку, если не читаете ее" answer="Добрый день. Извиняюсь за назойливость, но у нас принято брать книгу не больше чем на две недели. Пожалуйста, верните книгу номер 15 на полку, если не читаете ее" 
+
+2017-03-24 18:29:50.853505 
+name="VodnyjLibBot" surname="None" id=302476657 text="Добрый день. Извиняюсь за назойливость, но у нас принято брать книгу не больше чем на две недели. Пожалуйста, верните книгу номер 21 на полку, если не читаете ее" answer="Добрый день. Извиняюсь за назойливость, но у нас принято брать книгу не больше чем на две недели. Пожалуйста, верните книгу номер 21 на полку, если не читаете ее" 
+
+2017-03-24 18:29:50.921737 
+name="VodnyjLibBot" surname="None" id=302476657 text="Добрый день. Извиняюсь за назойливость, но у нас принято брать книгу не больше чем на две недели. Пожалуйста, верните книгу номер 22 на полку, если не читаете ее" answer="Добрый день. Извиняюсь за назойливость, но у нас принято брать книгу не больше чем на две недели. Пожалуйста, верните книгу номер 22 на полку, если не читаете ее" 
+
+2017-03-24 18:29:50.982373 
+name="VodnyjLibBot" surname="None" id=302476657 text="Добрый день. Извиняюсь за назойливость, но у нас принято брать книгу не больше чем на две недели. Пожалуйста, верните книгу номер 25 на полку, если не читаете ее" answer="Добрый день. Извиняюсь за назойливость, но у нас принято брать книгу не больше чем на две недели. Пожалуйста, верните книгу номер 25 на полку, если не читаете ее" 
+
+2017-03-24 18:29:51.038857 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/collect" answer="Коллектед :)" 
+
+2017-03-24 18:51:13.663503 
+name="Pavel" surname="Vinogradov" id=125345394 text="Добрый вечер" answer="!no answer" 
+
+2017-03-24 18:51:35.304674 
+name="Pavel" surname="Vinogradov" id=125345394 text="Был в отпуске, верну в понедельник. Спасибо" answer="!no answer" 
+
+2017-03-26 08:34:05.526422 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Взять" answer="У меня все хорошо" 
+
+2017-03-26 08:34:08.846062 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text=":)" answer=";)" 
+
+2017-03-27 05:54:17.514597 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Почитать описание" answer="У меня все хорошо" 
+
+2017-03-27 09:50:20.196687 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text=":)" answer=";)" 
+
+2017-03-27 14:29:44.450796 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/list" answer="Список книг:
+/1 Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв
+/3 Михаил Литвак. Командовать или подчиняться
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок
+/6 Эрик Рис. Бизнес с нуля
+/7 (отдана) Ицхак Адизес. Идеальный руководитель
+/8 Ицхак Адизес. Развитие лидеров
+/9 Олег Тиньков. Я такой как все
+/10 Олег Тиньков. Я такой как все
+/11 Ф.Брукс. Мифический человеко-месяц
+/12 Г.Кеннеди. Договориться можно обо всем
+/13 Эдуард Френкель. Любовь и математика
+/14 Stephen Few. Information dashboard design
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой
+/18 Генри Форд. Моя жизнь, мои достижения
+/19 Олег Тиньков. Как стать бизнесменом
+/20 В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 (отдана) Бретт Кинг. Банк 3.0
+/23 (отдана) Фредерик Лалу. Открывая организации будущего
+/24 Максим Богатырев. 45 татуировок продавана
+/25 (отдана) Максим Богатырев. 45 татуировок менеджера
+/26 Ицхак Адизес. Управление жизненным циклом корпорации
+/27 Майкл Кон. Пользовательские истории
+/28 (отдана) Саймон Синек. Начни с вопроса "Почему?"
+" 
+
+2017-03-27 14:29:47.302233 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/28" answer="Ты выбрал книгу - что с ней делать?" 
+
+2017-03-27 14:29:48.905197 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Положить" answer="У меня все хорошо" 
+
+2017-03-27 14:29:49.122212 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Положить" answer="Отлично, книга номер 28 вернулась на полку. Спасибо!" 
+
+2017-03-27 14:40:20.896660 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/list" answer="Список книг:
+/1 Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв
+/3 Михаил Литвак. Командовать или подчиняться
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок
+/6 Эрик Рис. Бизнес с нуля
+/7 (отдана) Ицхак Адизес. Идеальный руководитель
+/8 Ицхак Адизес. Развитие лидеров
+/9 Олег Тиньков. Я такой как все
+/10 Олег Тиньков. Я такой как все
+/11 Ф.Брукс. Мифический человеко-месяц
+/12 Г.Кеннеди. Договориться можно обо всем
+/13 Эдуард Френкель. Любовь и математика
+/14 Stephen Few. Information dashboard design
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой
+/18 Генри Форд. Моя жизнь, мои достижения
+/19 Олег Тиньков. Как стать бизнесменом
+/20 В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 (отдана) Бретт Кинг. Банк 3.0
+/23 (отдана) Фредерик Лалу. Открывая организации будущего
+/24 Максим Богатырев. 45 татуировок продавана
+/25 (отдана) Максим Богатырев. 45 татуировок менеджера
+/26 Ицхак Адизес. Управление жизненным циклом корпорации
+/27 Майкл Кон. Пользовательские истории
+/28 Саймон Синек. Начни с вопроса "Почему?"
+" 
+
+2017-03-27 14:41:54.234068 
+name="Artyomkiss" surname="None" id=74681100 text="/start" answer="Привет! Я бот-библиотекарь в SME.
+Скажи мне, какую книжку ты хочешь взять, и я тебя запишу ;)
+
+Пообщаться со мной можно так:
+/take - Взять книгу с полки
+/return - Вернуть книгу на полку
+/list - Посмотреть, что лежит на полке
+/suggest - Предложить добавить книгу на полку
+
+и, конечно
+/help - Список команд" 
+
+2017-03-27 14:42:06.178490 
+name="Artyomkiss" surname="None" id=74681100 text="/help" answer="Напоминаю:
+/take - Взять книгу с полки
+/return - Вернуть книгу на полку
+/list - Посмотреть, что лежит на полке
+/suggest - Предложить добавить книгу
+
+/help - Список команд" 
+
+2017-03-27 14:42:11.292653 
+name="Artyomkiss" surname="None" id=74681100 text="/list" answer="Список книг:
+/1 Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв
+/3 Михаил Литвак. Командовать или подчиняться
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок
+/6 Эрик Рис. Бизнес с нуля
+/7 (отдана) Ицхак Адизес. Идеальный руководитель
+/8 Ицхак Адизес. Развитие лидеров
+/9 Олег Тиньков. Я такой как все
+/10 Олег Тиньков. Я такой как все
+/11 Ф.Брукс. Мифический человеко-месяц
+/12 Г.Кеннеди. Договориться можно обо всем
+/13 Эдуард Френкель. Любовь и математика
+/14 Stephen Few. Information dashboard design
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой
+/18 Генри Форд. Моя жизнь, мои достижения
+/19 Олег Тиньков. Как стать бизнесменом
+/20 В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 (отдана) Бретт Кинг. Банк 3.0
+/23 (отдана) Фредерик Лалу. Открывая организации будущего
+/24 Максим Богатырев. 45 татуировок продавана
+/25 (отдана) Максим Богатырев. 45 татуировок менеджера
+/26 Ицхак Адизес. Управление жизненным циклом корпорации
+/27 Майкл Кон. Пользовательские истории
+/28 Саймон Синек. Начни с вопроса "Почему?"
+" 
+
+2017-03-27 14:42:33.932544 
+name="Artyomkiss" surname="None" id=74681100 text="/28" answer="Ты выбрал книгу - что с ней делать?" 
+
+2017-03-27 14:42:37.813086 
+name="Artyomkiss" surname="None" id=74681100 text="Взять" answer="!no answer" 
+
+['0', '1490119077\n']
+['0', '0\n']
+['0', '0\n']
+['224866506', '1490102068\n']
+['0', '0\n']
+['0', '0\n']
+['125345394', '1488212709\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '1490116322\n']
+['0', '0\n']
+['0', '0\n']
+['329485118', '1482218195\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '1489917909\n']
+['0', '1490380018\n']
+['81593382', '1482822861\n']
+['80867971', '1484039808\n']
+['112237516', '1489426907\n']
+['0', '0\n']
+['81593382', '1484988166\n']
+['0', '0\n']
+['0', '1490380152\n']
+['0', '1490624989\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+2017-03-27 14:42:37.886751 
+name="Artyomkiss" surname="None" id=74681100 text="Взять" answer="Отлично, книга номер 28 теперь у тебя" 
+
+2017-03-28 06:16:42.433622 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/list" answer="Список книг:
+/1 Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв
+/3 Михаил Литвак. Командовать или подчиняться
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок
+/6 Эрик Рис. Бизнес с нуля
+/7 (отдана) Ицхак Адизес. Идеальный руководитель
+/8 Ицхак Адизес. Развитие лидеров
+/9 Олег Тиньков. Я такой как все
+/10 Олег Тиньков. Я такой как все
+/11 Ф.Брукс. Мифический человеко-месяц
+/12 Г.Кеннеди. Договориться можно обо всем
+/13 Эдуард Френкель. Любовь и математика
+/14 Stephen Few. Information dashboard design
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой
+/18 Генри Форд. Моя жизнь, мои достижения
+/19 Олег Тиньков. Как стать бизнесменом
+/20 В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 (отдана) Бретт Кинг. Банк 3.0
+/23 (отдана) Фредерик Лалу. Открывая организации будущего
+/24 Максим Богатырев. 45 татуировок продавана
+/25 (отдана) Максим Богатырев. 45 татуировок менеджера
+/26 Ицхак Адизес. Управление жизненным циклом корпорации
+/27 Майкл Кон. Пользовательские истории
+/28 (отдана) Саймон Синек. Начни с вопроса "Почему?"
+" 
+
+2017-03-28 13:07:10.252746 
+name="Pavel" surname="Vinogradov" id=125345394 text="Положить" answer="!no answer" 
+
+2017-03-28 13:08:18.906387 
+name="Pavel" surname="Vinogradov" id=125345394 text="/return" answer="Скажи номер книги, которую возвращаешь" 
+
+2017-03-28 13:08:35.491753 
+name="Pavel" surname="Vinogradov" id=125345394 text="7" answer="!no answer" 
+
+2017-03-28 13:08:35.627123 
+name="Pavel" surname="Vinogradov" id=125345394 text="7" answer="Отлично, книга номер 7 вернулась на полку. Спасибо!" 
+
+2017-03-28 13:27:39.917817 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/list" answer="Список книг:
+/1 Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв
+/3 Михаил Литвак. Командовать или подчиняться
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок
+/6 Эрик Рис. Бизнес с нуля
+/7 Ицхак Адизес. Идеальный руководитель
+/8 Ицхак Адизес. Развитие лидеров
+/9 Олег Тиньков. Я такой как все
+/10 Олег Тиньков. Я такой как все
+/11 Ф.Брукс. Мифический человеко-месяц
+/12 Г.Кеннеди. Договориться можно обо всем
+/13 Эдуард Френкель. Любовь и математика
+/14 Stephen Few. Information dashboard design
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой
+/18 Генри Форд. Моя жизнь, мои достижения
+/19 Олег Тиньков. Как стать бизнесменом
+/20 В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 (отдана) Бретт Кинг. Банк 3.0
+/23 (отдана) Фредерик Лалу. Открывая организации будущего
+/24 Максим Богатырев. 45 татуировок продавана
+/25 (отдана) Максим Богатырев. 45 татуировок менеджера
+/26 Ицхак Адизес. Управление жизненным циклом корпорации
+/27 Майкл Кон. Пользовательские истории
+/28 (отдана) Саймон Синек. Начни с вопроса "Почему?"
+" 
+
+2017-03-28 13:28:12.499069 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/suggest" answer="Круто! Какую книгу хочешь предложить?" 
+
+2017-03-28 13:28:18.787828 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="хорошую" answer="У меня все хорошо" 
+
+2017-03-28 13:28:18.917458 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="хорошую" answer="Спасибо! Твое пожелание зафиксировано" 
+
+2017-03-28 13:28:18.990452 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="хорошую" answer="Новое предложение книги: хорошую" 
+
+2017-03-28 13:28:23.451715 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/list" answer="Список книг:
+/1 Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв
+/3 Михаил Литвак. Командовать или подчиняться
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок
+/6 Эрик Рис. Бизнес с нуля
+/7 Ицхак Адизес. Идеальный руководитель
+/8 Ицхак Адизес. Развитие лидеров
+/9 Олег Тиньков. Я такой как все
+/10 Олег Тиньков. Я такой как все
+/11 Ф.Брукс. Мифический человеко-месяц
+/12 Г.Кеннеди. Договориться можно обо всем
+/13 Эдуард Френкель. Любовь и математика
+/14 Stephen Few. Information dashboard design
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой
+/18 Генри Форд. Моя жизнь, мои достижения
+/19 Олег Тиньков. Как стать бизнесменом
+/20 В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 (отдана) Бретт Кинг. Банк 3.0
+/23 (отдана) Фредерик Лалу. Открывая организации будущего
+/24 Максим Богатырев. 45 татуировок продавана
+/25 (отдана) Максим Богатырев. 45 татуировок менеджера
+/26 Ицхак Адизес. Управление жизненным циклом корпорации
+/27 Майкл Кон. Пользовательские истории
+/28 (отдана) Саймон Синек. Начни с вопроса "Почему?"
+" 
+
+2017-03-28 13:32:06.310159 
+name="Yuriy" surname="Chekashkin" id=33305986 text="/suggest" answer="Круто! Какую книгу хочешь предложить?" 
+
+2017-03-28 13:33:24.805745 
+name="Yuriy" surname="Chekashkin" id=33305986 text="Rework Дэвид он Фрайд и Дэвид Хайнемайер Хенссон" answer="!no answer" 
+
+2017-03-28 13:33:24.887151 
+name="Yuriy" surname="Chekashkin" id=33305986 text="Rework Дэвид он Фрайд и Дэвид Хайнемайер Хенссон" answer="Спасибо! Твое пожелание зафиксировано" 
+
+2017-03-28 13:33:24.957824 
+name="Yuriy" surname="Chekashkin" id=33305986 text="Rework Дэвид он Фрайд и Дэвид Хайнемайер Хенссон" answer="Новое предложение книги: Rework Дэвид он Фрайд и Дэвид Хайнемайер Хенссон" 
+
+2017-03-29 11:57:11.338859 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text=":)" answer=";)" 
+
+2017-03-29 11:57:13.614405 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Почитать описание" answer="У меня все хорошо" 
+
+2017-03-31 16:43:56.165989 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/list" answer="Список книг:
+/1 Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв
+/3 Михаил Литвак. Командовать или подчиняться
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок
+/6 Эрик Рис. Бизнес с нуля
+/7 Ицхак Адизес. Идеальный руководитель
+/8 Ицхак Адизес. Развитие лидеров
+/9 Олег Тиньков. Я такой как все
+/10 Олег Тиньков. Я такой как все
+/11 Ф.Брукс. Мифический человеко-месяц
+/12 Г.Кеннеди. Договориться можно обо всем
+/13 Эдуард Френкель. Любовь и математика
+/14 Stephen Few. Information dashboard design
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой
+/18 Генри Форд. Моя жизнь, мои достижения
+/19 Олег Тиньков. Как стать бизнесменом
+/20 В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 (отдана) Бретт Кинг. Банк 3.0
+/23 (отдана) Фредерик Лалу. Открывая организации будущего
+/24 Максим Богатырев. 45 татуировок продавана
+/25 (отдана) Максим Богатырев. 45 татуировок менеджера
+/26 Ицхак Адизес. Управление жизненным циклом корпорации
+/27 Майкл Кон. Пользовательские истории
+/28 (отдана) Саймон Синек. Начни с вопроса "Почему?"
+" 
+
+2017-04-02 08:10:55.300878 
+name="Alexander" surname="Fedorov" id=143235168 text="/list" answer="Список книг:
+/1 Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв
+/3 Михаил Литвак. Командовать или подчиняться
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок
+/6 Эрик Рис. Бизнес с нуля
+/7 Ицхак Адизес. Идеальный руководитель
+/8 Ицхак Адизес. Развитие лидеров
+/9 Олег Тиньков. Я такой как все
+/10 Олег Тиньков. Я такой как все
+/11 Ф.Брукс. Мифический человеко-месяц
+/12 Г.Кеннеди. Договориться можно обо всем
+/13 Эдуард Френкель. Любовь и математика
+/14 Stephen Few. Information dashboard design
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой
+/18 Генри Форд. Моя жизнь, мои достижения
+/19 Олег Тиньков. Как стать бизнесменом
+/20 В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 (отдана) Бретт Кинг. Банк 3.0
+/23 (отдана) Фредерик Лалу. Открывая организации будущего
+/24 Максим Богатырев. 45 татуировок продавана
+/25 (отдана) Максим Богатырев. 45 татуировок менеджера
+/26 Ицхак Адизес. Управление жизненным циклом корпорации
+/27 Майкл Кон. Пользовательские истории
+/28 (отдана) Саймон Синек. Начни с вопроса "Почему?"
+" 
+
+2017-04-03 06:31:21.440217 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Почитать описание" answer="У меня все хорошо" 
+
+2017-04-03 07:14:21.320470 
+name="Anton" surname="None" id=30796903 text="/return" answer="Скажи номер книги, которую возвращаешь" 
+
+2017-04-03 07:14:25.916001 
+name="Anton" surname="None" id=30796903 text="25" answer="!no answer" 
+
+2017-04-03 07:14:25.978710 
+name="Anton" surname="None" id=30796903 text="25" answer="Отлично, книга номер 25 вернулась на полку. Спасибо!" 
+
+2017-04-04 17:09:07.186936 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/list" answer="Список книг:
+/1 Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв
+/3 Михаил Литвак. Командовать или подчиняться
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок
+/6 Эрик Рис. Бизнес с нуля
+/7 Ицхак Адизес. Идеальный руководитель
+/8 Ицхак Адизес. Развитие лидеров
+/9 Олег Тиньков. Я такой как все
+/10 Олег Тиньков. Я такой как все
+/11 Ф.Брукс. Мифический человеко-месяц
+/12 Г.Кеннеди. Договориться можно обо всем
+/13 Эдуард Френкель. Любовь и математика
+/14 Stephen Few. Information dashboard design
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой
+/18 Генри Форд. Моя жизнь, мои достижения
+/19 Олег Тиньков. Как стать бизнесменом
+/20 В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 (отдана) Бретт Кинг. Банк 3.0
+/23 (отдана) Фредерик Лалу. Открывая организации будущего
+/24 Максим Богатырев. 45 татуировок продавана
+/25 Максим Богатырев. 45 татуировок менеджера
+/26 Ицхак Адизес. Управление жизненным циклом корпорации
+/27 Майкл Кон. Пользовательские истории
+/28 (отдана) Саймон Синек. Начни с вопроса "Почему?"
+" 
+
+2017-04-04 17:15:56.743199 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/add" answer="Как называется книга?" 
+
+2017-04-04 17:16:11.443330 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Эрик Берн. Игры, в которые играют люди. Люди, которые играют в игры" answer="У меня все хорошо" 
+
+2017-04-04 17:16:11.579395 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Эрик Берн. Игры, в которые играют люди. Люди, которые играют в игры" answer="Введи ссылку на описание с картинкой" 
+
+2017-04-04 17:16:52.188970 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="http://www.ozon.ru/context/detail/id/3865066/" answer="У меня все хорошо" 
+
+2017-04-04 17:16:52.207510 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="http://www.ozon.ru/context/detail/id/3865066/" answer="Всё круто!:)" 
+
+2017-04-04 17:16:55.925819 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/list" answer="Список книг:
+/1 Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв
+/3 Михаил Литвак. Командовать или подчиняться
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок
+/6 Эрик Рис. Бизнес с нуля
+/7 Ицхак Адизес. Идеальный руководитель
+/8 Ицхак Адизес. Развитие лидеров
+/9 Олег Тиньков. Я такой как все
+/10 Олег Тиньков. Я такой как все
+/11 Ф.Брукс. Мифический человеко-месяц
+/12 Г.Кеннеди. Договориться можно обо всем
+/13 Эдуард Френкель. Любовь и математика
+/14 Stephen Few. Information dashboard design
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой
+/18 Генри Форд. Моя жизнь, мои достижения
+/19 Олег Тиньков. Как стать бизнесменом
+/20 В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 (отдана) Бретт Кинг. Банк 3.0
+/23 (отдана) Фредерик Лалу. Открывая организации будущего
+/24 Максим Богатырев. 45 татуировок продавана
+/25 Максим Богатырев. 45 татуировок менеджера
+/26 Ицхак Адизес. Управление жизненным циклом корпорации
+/27 Майкл Кон. Пользовательские истории
+/28 (отдана) Саймон Синек. Начни с вопроса "Почему?"
+/29 Эрик Берн. Игры, в которые играют люди. Люди, которые играют в игры
+" 
+
+2017-04-04 17:17:03.589952 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/add" answer="Как называется книга?" 
+
+2017-04-04 17:17:13.857416 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Т.Драйзер. Финансист" answer="У меня все хорошо" 
+
+2017-04-04 17:17:13.884578 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Т.Драйзер. Финансист" answer="Введи ссылку на описание с картинкой" 
+
+2017-04-04 17:17:20.206982 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="http://www.ozon.ru/context/detail/id/21444419/" answer="У меня все хорошо" 
+
+2017-04-04 17:17:20.236739 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="http://www.ozon.ru/context/detail/id/21444419/" answer="Всё круто!:)" 
+
+2017-04-04 17:17:23.859028 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/add" answer="Как называется книга?" 
+
+2017-04-04 17:17:38.878750 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Стивен Кови. 7 навыков высокоэффективных людей" answer="У меня все хорошо" 
+
+2017-04-04 17:17:38.920687 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Стивен Кови. 7 навыков высокоэффективных людей" answer="Введи ссылку на описание с картинкой" 
+
+2017-04-04 17:17:46.619604 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="http://www.ozon.ru/context/detail/id/6974309/" answer="У меня все хорошо" 
+
+2017-04-04 17:17:46.657738 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="http://www.ozon.ru/context/detail/id/6974309/" answer="Всё круто!:)" 
+
+2017-04-04 17:17:50.439178 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/add" answer="Как называется книга?" 
+
+2017-04-04 17:18:07.928584 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Э.Лефевр. Воспоминания биржевого спекулянта" answer="У меня все хорошо" 
+
+2017-04-04 17:18:07.951526 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Э.Лефевр. Воспоминания биржевого спекулянта" answer="Введи ссылку на описание с картинкой" 
+
+2017-04-04 17:18:16.659377 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="http://www.ozon.ru/context/detail/id/138113710/" answer="У меня все хорошо" 
+
+2017-04-04 17:18:16.696517 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="http://www.ozon.ru/context/detail/id/138113710/" answer="Всё круто!:)" 
+
+2017-04-04 17:18:31.570103 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/add" answer="Как называется книга?" 
+
+2017-04-04 17:18:37.613666 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Искусство системного мышления" answer="У меня все хорошо" 
+
+2017-04-04 17:18:37.642103 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Искусство системного мышления" answer="Введи ссылку на описание с картинкой" 
+
+2017-04-04 17:18:44.563267 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="http://www.ozon.ru/context/detail/id/4643141/" answer="У меня все хорошо" 
+
+2017-04-04 17:18:44.587904 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="http://www.ozon.ru/context/detail/id/4643141/" answer="Всё круто!:)" 
+
+2017-04-04 17:18:55.271273 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/add" answer="Как называется книга?" 
+
+2017-04-04 17:19:10.308897 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Ричард Брэнсон. Теряя невинность" answer="Введи ссылку на описание с картинкой" 
+
+2017-04-04 17:19:10.334962 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Ричард Брэнсон. Теряя невинность" answer="У меня все хорошо" 
+
+2017-04-04 17:19:17.647311 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="http://www.ozon.ru/context/detail/id/17910939/" answer="Всё круто!:)" 
+
+2017-04-04 17:19:17.672499 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="http://www.ozon.ru/context/detail/id/17910939/" answer="У меня все хорошо" 
+
+2017-04-04 17:19:26.776014 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/add" answer="Как называется книга?" 
+
+2017-04-04 17:19:35.209250 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Том Демарко. Deadline" answer="У меня все хорошо" 
+
+2017-04-04 17:19:35.240651 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Том Демарко. Deadline" answer="Введи ссылку на описание с картинкой" 
+
+2017-04-04 17:19:44.996163 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="http://www.ozon.ru/context/detail/id/22433706/" answer="У меня все хорошо" 
+
+2017-04-04 17:19:45.003662 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="http://www.ozon.ru/context/detail/id/22433706/" answer="Всё круто!:)" 
+
+2017-04-04 17:19:55.720284 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/add" answer="Как называется книга?" 
+
+2017-04-04 17:20:06.142355 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="М.Зыгарь. Вся кремлевская рать" answer="У меня все хорошо" 
+
+2017-04-04 17:20:06.169689 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="М.Зыгарь. Вся кремлевская рать" answer="Введи ссылку на описание с картинкой" 
+
+2017-04-04 17:20:10.602290 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="http://www.ozon.ru/context/detail/id/34187589/" answer="У меня все хорошо" 
+
+2017-04-04 17:20:10.631414 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="http://www.ozon.ru/context/detail/id/34187589/" answer="Всё круто!:)" 
+
+2017-04-04 17:20:19.895834 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/add" answer="Как называется книга?" 
+
+2017-04-04 17:20:25.965534 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Р.Чалдини. Психология влияния" answer="У меня все хорошо" 
+
+2017-04-04 17:20:25.976746 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Р.Чалдини. Психология влияния" answer="Введи ссылку на описание с картинкой" 
+
+2017-04-04 17:20:35.312484 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="http://www.ozon.ru/context/detail/id/19729207/" answer="У меня все хорошо" 
+
+2017-04-04 17:20:35.329885 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="http://www.ozon.ru/context/detail/id/19729207/" answer="Всё круто!:)" 
+
+2017-04-04 17:20:38.703475 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/add" answer="Как называется книга?" 
+
+2017-04-04 17:22:08.595172 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Эльяху Голдрат. Цель" answer="У меня все хорошо" 
+
+2017-04-04 17:22:08.614662 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Эльяху Голдрат. Цель" answer="Введи ссылку на описание с картинкой" 
+
+2017-04-04 17:22:21.385877 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="http://www.ozon.ru/context/detail/id/4341360/" answer="У меня все хорошо" 
+
+2017-04-04 17:22:21.415994 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="http://www.ozon.ru/context/detail/id/4341360/" answer="Всё круто!:)" 
+
+2017-04-04 17:22:23.736756 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/list" answer="Список книг:
+/1 Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв
+/3 Михаил Литвак. Командовать или подчиняться
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок
+/6 Эрик Рис. Бизнес с нуля
+/7 Ицхак Адизес. Идеальный руководитель
+/8 Ицхак Адизес. Развитие лидеров
+/9 Олег Тиньков. Я такой как все
+/10 Олег Тиньков. Я такой как все
+/11 Ф.Брукс. Мифический человеко-месяц
+/12 Г.Кеннеди. Договориться можно обо всем
+/13 Эдуард Френкель. Любовь и математика
+/14 Stephen Few. Information dashboard design
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой
+/18 Генри Форд. Моя жизнь, мои достижения
+/19 Олег Тиньков. Как стать бизнесменом
+/20 В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 (отдана) Бретт Кинг. Банк 3.0
+/23 (отдана) Фредерик Лалу. Открывая организации будущего
+/24 Максим Богатырев. 45 татуировок продавана
+/25 Максим Богатырев. 45 татуировок менеджера
+/26 Ицхак Адизес. Управление жизненным циклом корпорации
+/27 Майкл Кон. Пользовательские истории
+/28 (отдана) Саймон Синек. Начни с вопроса "Почему?"
+/29 Эрик Берн. Игры, в которые играют люди. Люди, которые играют в игры
+/30 Т.Драйзер. Финансист
+/31 Стивен Кови. 7 навыков высокоэффективных людей
+/32 Э.Лефевр. Воспоминания биржевого спекулянта
+/33 Искусство системного мышления
+/34 Ричард Брэнсон. Теряя невинность
+/35 Том Демарко. Deadline
+/36 М.Зыгарь. Вся кремлевская рать
+/37 Р.Чалдини. Психология влияния
+/38 Эльяху Голдрат. Цель
+" 
+
+2017-04-04 17:22:30.872900 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/38" answer="Ты выбрал книгу - что с ней делать?" 
+
+['0', '1490119077\n']
+['0', '0\n']
+['0', '0\n']
+['224866506', '1490102068\n']
+['0', '0\n']
+['0', '0\n']
+['0', '1490706515\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '1490116322\n']
+['0', '0\n']
+['0', '0\n']
+['329485118', '1482218195\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '1489917909\n']
+['0', '1490380018\n']
+['81593382', '1482822861\n']
+['80867971', '1484039808\n']
+['112237516', '1489426907\n']
+['0', '0\n']
+['0', '1491203666\n']
+['0', '0\n']
+['0', '1490380152\n']
+['74681100', '1490625758\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+2017-04-04 17:22:31.912062 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Взять" answer="У меня все хорошо" 
+
+2017-04-04 17:22:31.944846 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Взять" answer="Отлично, книга номер 38 теперь у тебя" 
+
+2017-04-04 17:22:34.936122 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/list" answer="Список книг:
+/1 Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв
+/3 Михаил Литвак. Командовать или подчиняться
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок
+/6 Эрик Рис. Бизнес с нуля
+/7 Ицхак Адизес. Идеальный руководитель
+/8 Ицхак Адизес. Развитие лидеров
+/9 Олег Тиньков. Я такой как все
+/10 Олег Тиньков. Я такой как все
+/11 Ф.Брукс. Мифический человеко-месяц
+/12 Г.Кеннеди. Договориться можно обо всем
+/13 Эдуард Френкель. Любовь и математика
+/14 Stephen Few. Information dashboard design
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой
+/18 Генри Форд. Моя жизнь, мои достижения
+/19 Олег Тиньков. Как стать бизнесменом
+/20 В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 (отдана) Бретт Кинг. Банк 3.0
+/23 (отдана) Фредерик Лалу. Открывая организации будущего
+/24 Максим Богатырев. 45 татуировок продавана
+/25 Максим Богатырев. 45 татуировок менеджера
+/26 Ицхак Адизес. Управление жизненным циклом корпорации
+/27 Майкл Кон. Пользовательские истории
+/28 (отдана) Саймон Синек. Начни с вопроса "Почему?"
+/29 Эрик Берн. Игры, в которые играют люди. Люди, которые играют в игры
+/30 Т.Драйзер. Финансист
+/31 Стивен Кови. 7 навыков высокоэффективных людей
+/32 Э.Лефевр. Воспоминания биржевого спекулянта
+/33 Искусство системного мышления
+/34 Ричард Брэнсон. Теряя невинность
+/35 Том Демарко. Deadline
+/36 М.Зыгарь. Вся кремлевская рать
+/37 Р.Чалдини. Психология влияния
+/38 (отдана) Эльяху Голдрат. Цель
+" 
+
+2017-04-04 20:19:01.995694 
+name="Dmitry" surname="Tomin" id=112237516 text="/take" answer="Скажи номер книги, которую хочешь взять" 
+
+2017-04-04 20:19:04.774176 
+name="Dmitry" surname="Tomin" id=112237516 text="20" answer="!no answer" 
+
+['0', '1490119077\n']
+['0', '0\n']
+['0', '0\n']
+['224866506', '1490102068\n']
+['0', '0\n']
+['0', '0\n']
+['0', '1490706515\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '1490116322\n']
+['0', '0\n']
+['0', '0\n']
+['329485118', '1482218195\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '1489917909\n']
+['0', '1490380018\n']
+['81593382', '1482822861\n']
+['80867971', '1484039808\n']
+['112237516', '1489426907\n']
+['0', '0\n']
+['0', '1491203666\n']
+['0', '0\n']
+['0', '1490380152\n']
+['74681100', '1490625758\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['81593382', '1491326552\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+['0', '0\n']
+2017-04-04 20:19:04.860736 
+name="Dmitry" surname="Tomin" id=112237516 text="20" answer="Отлично, книга номер 20 теперь у тебя" 
+
+2017-04-05 06:57:10.122430 
+name="Dmitry" surname="Tomin" id=112237516 text="/list" answer="Список книг:
+/1 Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв
+/3 Михаил Литвак. Командовать или подчиняться
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок
+/6 Эрик Рис. Бизнес с нуля
+/7 Ицхак Адизес. Идеальный руководитель
+/8 Ицхак Адизес. Развитие лидеров
+/9 Олег Тиньков. Я такой как все
+/10 Олег Тиньков. Я такой как все
+/11 Ф.Брукс. Мифический человеко-месяц
+/12 Г.Кеннеди. Договориться можно обо всем
+/13 Эдуард Френкель. Любовь и математика
+/14 Stephen Few. Information dashboard design
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой
+/18 Генри Форд. Моя жизнь, мои достижения
+/19 Олег Тиньков. Как стать бизнесменом
+/20 (отдана) В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 (отдана) Бретт Кинг. Банк 3.0
+/23 (отдана) Фредерик Лалу. Открывая организации будущего
+/24 Максим Богатырев. 45 татуировок продавана
+/25 Максим Богатырев. 45 татуировок менеджера
+/26 Ицхак Адизес. Управление жизненным циклом корпорации
+/27 Майкл Кон. Пользовательские истории
+/28 (отдана) Саймон Синек. Начни с вопроса "Почему?"
+/29 Эрик Берн. Игры, в которые играют люди. Люди, которые играют в игры
+/30 Т.Драйзер. Финансист
+/31 Стивен Кови. 7 навыков высокоэффективных людей
+/32 Э.Лефевр. Воспоминания биржевого спекулянта
+/33 Искусство системного мышления
+/34 Ричард Брэнсон. Теряя невинность
+/35 Том Демарко. Deadline
+/36 М.Зыгарь. Вся кремлевская рать
+/37 Р.Чалдини. Психология влияния
+/38 (отдана) Эльяху Голдрат. Цель
+" 
+2017-04-06 01:54:11,063 (__init__.py:250 MainThread) ERROR - TeleBot: "A request to the Telegram API was unsuccessful. The server returned HTTP 502 Bad Gateway. Response body:
+[b'<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor="white">\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.10.0</center>\r\n</body>\r\n</html>\r\n']"
+2017-04-06 01:54:12,352 (__init__.py:250 MainThread) ERROR - TeleBot: "A request to the Telegram API was unsuccessful. The server returned HTTP 502 Bad Gateway. Response body:
+[b'<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor="white">\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.10.0</center>\r\n</body>\r\n</html>\r\n']"
+2017-04-06 01:54:13,891 (__init__.py:250 MainThread) ERROR - TeleBot: "A request to the Telegram API was unsuccessful. The server returned HTTP 502 Bad Gateway. Response body:
+[b'<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor="white">\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.10.0</center>\r\n</body>\r\n</html>\r\n']"
+2017-04-06 01:54:15,930 (__init__.py:250 MainThread) ERROR - TeleBot: "A request to the Telegram API was unsuccessful. The server returned HTTP 502 Bad Gateway. Response body:
+[b'<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor="white">\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.10.0</center>\r\n</body>\r\n</html>\r\n']"
+2017-04-13 01:30:43,124 (__init__.py:250 MainThread) ERROR - TeleBot: "A request to the Telegram API was unsuccessful. The server returned HTTP 502 Bad Gateway. Response body:
+[b'<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor="white">\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.10.0</center>\r\n</body>\r\n</html>\r\n']"
+2017-04-13 01:30:44,417 (__init__.py:250 MainThread) ERROR - TeleBot: "A request to the Telegram API was unsuccessful. The server returned HTTP 502 Bad Gateway. Response body:
+[b'<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor="white">\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.10.0</center>\r\n</body>\r\n</html>\r\n']"
+2017-04-13 01:30:45,957 (__init__.py:250 MainThread) ERROR - TeleBot: "A request to the Telegram API was unsuccessful. The server returned HTTP 502 Bad Gateway. Response body:
+[b'<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor="white">\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.10.0</center>\r\n</body>\r\n</html>\r\n']"
+2017-04-13 01:30:47,995 (__init__.py:250 MainThread) ERROR - TeleBot: "A request to the Telegram API was unsuccessful. The server returned HTTP 502 Bad Gateway. Response body:
+[b'<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor="white">\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.10.0</center>\r\n</body>\r\n</html>\r\n']"
+2017-04-14 13:15:25,138 (__init__.py:250 MainThread) ERROR - TeleBot: "A request to the Telegram API was unsuccessful. The server returned HTTP 502 Bad Gateway. Response body:
+[b'<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor="white">\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.10.0</center>\r\n</body>\r\n</html>\r\n']"
+2017-04-14 13:15:26,428 (__init__.py:250 MainThread) ERROR - TeleBot: "A request to the Telegram API was unsuccessful. The server returned HTTP 502 Bad Gateway. Response body:
+[b'<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor="white">\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.10.0</center>\r\n</body>\r\n</html>\r\n']"
+2017-04-14 13:15:27,967 (__init__.py:250 MainThread) ERROR - TeleBot: "A request to the Telegram API was unsuccessful. The server returned HTTP 502 Bad Gateway. Response body:
+[b'<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor="white">\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.10.0</center>\r\n</body>\r\n</html>\r\n']"
+2017-04-14 13:15:30,005 (__init__.py:250 MainThread) ERROR - TeleBot: "A request to the Telegram API was unsuccessful. The server returned HTTP 502 Bad Gateway. Response body:
+[b'<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body bgcolor="white">\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.10.0</center>\r\n</body>\r\n</html>\r\n']"
+Bot initialised
+2017-04-07 12:32:25.077058 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="(" answer="У меня все хорошо" 
+
+2017-04-07 12:32:31.822910 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Почитать описание" answer="У меня все хорошо" 
+
+2017-04-09 14:51:27.192582 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text=":)" answer=";)" 
+
+2017-04-10 06:58:53.332206 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text=":)" answer=";)" 
+
+2017-04-12 11:50:37.159913 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/list" answer="Список книг:
+/1 (отдана) Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв
+/3 Михаил Литвак. Командовать или подчиняться
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок
+/6 Эрик Рис. Бизнес с нуля
+/7 Ицхак Адизес. Идеальный руководитель
+/8 Ицхак Адизес. Развитие лидеров
+/9 Олег Тиньков. Я такой как все
+/10 Олег Тиньков. Я такой как все
+/11 Ф.Брукс. Мифический человеко-месяц
+/12 Г.Кеннеди. Договориться можно обо всем
+/13 Эдуард Френкель. Любовь и математика
+/14 Stephen Few. Information dashboard design
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой
+/18 Генри Форд. Моя жизнь, мои достижения
+/19 Олег Тиньков. Как стать бизнесменом
+/20 (отдана) В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 (отдана) Бретт Кинг. Банк 3.0
+/23 Фредерик Лалу. Открывая организации будущего
+/24 Максим Богатырев. 45 татуировок продавана
+/25 Максим Богатырев. 45 татуировок менеджера
+/26 Ицхак Адизес. Управление жизненным циклом корпорации
+/27 Майкл Кон. Пользовательские истории
+/28 (отдана) Саймон Синек. Начни с вопроса "Почему?"
+/29 Эрик Берн. Игры, в которые играют люди. Люди, которые играют в игры
+/30 Т.Драйзер. Финансист
+/31 Стивен Кови. 7 навыков высокоэффективных людей
+/32 Э.Лефевр. Воспоминания биржевого спекулянта
+/33 Искусство системного мышления
+/34 Ричард Брэнсон. Теряя невинность
+/35 Том Демарко. Deadline
+/36 М.Зыгарь. Вся кремлевская рать
+/37 Р.Чалдини. Психология влияния
+/38 (отдана) Эльяху Голдрат. Цель
+" 
+
+2017-04-12 11:50:47.180617 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/4" answer="Ты выбрал книгу - что с ней делать?" 
+
+2017-04-12 11:50:49.702203 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Толкнуть читающего" answer="У меня все хорошо" 
+
+2017-04-12 11:50:49.933881 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Толкнуть читающего" answer="Отлично, читающий теперь знает, что книжка интересна не только ему :)" 
+
+2017-04-12 17:27:59.251763 
+name="Stanislav" surname="Sychev" id=80867971 text="/22" answer="Ты выбрал книгу - что с ней делать?" 
+
+2017-04-12 17:28:03.299104 
+name="Stanislav" surname="Sychev" id=80867971 text="Положить" answer="!no answer" 
+
+2017-04-12 17:28:03.360419 
+name="Stanislav" surname="Sychev" id=80867971 text="Положить" answer="Отлично, книга номер 22 вернулась на полку. Спасибо!" 
+
+2017-04-16 09:31:34.365949 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="Подписаться на возврат" answer="У меня все хорошо" 
+
+2017-04-17 12:01:23.301076 
+name="Igor" surname="Mamaev" id=140594823 text="/start" answer="Привет! Я бот-библиотекарь в SME.
+Скажи мне, какую книжку ты хочешь взять, и я тебя запишу ;)
+
+Пообщаться со мной можно так:
+/take - Взять книгу с полки
+/return - Вернуть книгу на полку
+/list - Посмотреть, что лежит на полке
+/suggest - Предложить добавить книгу на полку
+
+и, конечно
+/help - Список команд" 
+
+2017-04-17 12:01:30.994532 
+name="Igor" surname="Mamaev" id=140594823 text="/list" answer="Список книг:
+/1 (отдана) Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв
+/3 Михаил Литвак. Командовать или подчиняться
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок
+/6 Эрик Рис. Бизнес с нуля
+/7 Ицхак Адизес. Идеальный руководитель
+/8 Ицхак Адизес. Развитие лидеров
+/9 Олег Тиньков. Я такой как все
+/10 Олег Тиньков. Я такой как все
+/11 Ф.Брукс. Мифический человеко-месяц
+/12 Г.Кеннеди. Договориться можно обо всем
+/13 Эдуард Френкель. Любовь и математика
+/14 Stephen Few. Information dashboard design
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой
+/18 Генри Форд. Моя жизнь, мои достижения
+/19 Олег Тиньков. Как стать бизнесменом
+/20 (отдана) В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 Бретт Кинг. Банк 3.0
+/23 Фредерик Лалу. Открывая организации будущего
+/24 Максим Богатырев. 45 татуировок продавана
+/25 Максим Богатырев. 45 татуировок менеджера
+/26 Ицхак Адизес. Управление жизненным циклом корпорации
+/27 Майкл Кон. Пользовательские истории
+/28 (отдана) Саймон Синек. Начни с вопроса "Почему?"
+/29 Эрик Берн. Игры, в которые играют люди. Люди, которые играют в игры
+/30 Т.Драйзер. Финансист
+/31 Стивен Кови. 7 навыков высокоэффективных людей
+/32 Э.Лефевр. Воспоминания биржевого спекулянта
+/33 Искусство системного мышления
+/34 Ричард Брэнсон. Теряя невинность
+/35 Том Демарко. Deadline
+/36 М.Зыгарь. Вся кремлевская рать
+/37 Р.Чалдини. Психология влияния
+/38 (отдана) Эльяху Голдрат. Цель
+" 
+
+2017-04-18 08:09:24.687751 
+name="Alexander" surname="Fedorov" id=143235168 text="/list" answer="Список книг:
+/1 (отдана) Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв
+/3 Михаил Литвак. Командовать или подчиняться
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок
+/6 Эрик Рис. Бизнес с нуля
+/7 Ицхак Адизес. Идеальный руководитель
+/8 Ицхак Адизес. Развитие лидеров
+/9 Олег Тиньков. Я такой как все
+/10 Олег Тиньков. Я такой как все
+/11 Ф.Брукс. Мифический человеко-месяц
+/12 Г.Кеннеди. Договориться можно обо всем
+/13 Эдуард Френкель. Любовь и математика
+/14 Stephen Few. Information dashboard design
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой
+/18 Генри Форд. Моя жизнь, мои достижения
+/19 Олег Тиньков. Как стать бизнесменом
+/20 (отдана) В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 Бретт Кинг. Банк 3.0
+/23 Фредерик Лалу. Открывая организации будущего
+/24 Максим Богатырев. 45 татуировок продавана
+/25 Максим Богатырев. 45 татуировок менеджера
+/26 Ицхак Адизес. Управление жизненным циклом корпорации
+/27 Майкл Кон. Пользовательские истории
+/28 (отдана) Саймон Синек. Начни с вопроса "Почему?"
+/29 Эрик Берн. Игры, в которые играют люди. Люди, которые играют в игры
+/30 Т.Драйзер. Финансист
+/31 Стивен Кови. 7 навыков высокоэффективных людей
+/32 Э.Лефевр. Воспоминания биржевого спекулянта
+/33 Искусство системного мышления
+/34 Ричард Брэнсон. Теряя невинность
+/35 Том Демарко. Deadline
+/36 М.Зыгарь. Вся кремлевская рать
+/37 Р.Чалдини. Психология влияния
+/38 (отдана) Эльяху Голдрат. Цель
+" 
+Bot initialised
+2017-04-19 20:14:19.954067 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/start" answer="Привет! Я бот-библиотекарь в SME.
+Скажи мне, какую книжку ты хочешь взять, и я тебя запишу ;)
+
+Пообщаться со мной можно так:
+/list - Посмотреть, что лежит на полке
+/take - Взять книгу с полки
+/return - Вернуть книгу на полку
+/n, где n это номер книги - Действия с этой книгой
+
+и, конечно
+/help - Список команд" 
+
+2017-04-19 20:14:23.181207 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/list" answer="Список книг:
+/1 (отдана) Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв (24 этаж)
+/3 Михаил Литвак. Командовать или подчиняться (24 этаж)
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок (24 этаж)
+/6 Эрик Рис. Бизнес с нуля (24 этаж)
+/7 Ицхак Адизес. Идеальный руководитель (24 этаж)
+/8 Ицхак Адизес. Развитие лидеров (24 этаж)
+/9 Олег Тиньков. Я такой как все (24 этаж)
+/10 Олег Тиньков. Я такой как все (24 этаж)
+/11 Ф.Брукс. Мифический человеко-месяц (24 этаж)
+/12 Г.Кеннеди. Договориться можно обо всем (24 этаж)
+/13 Эдуард Френкель. Любовь и математика (24 этаж)
+/14 Stephen Few. Information dashboard design (24 этаж)
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed (24 этаж)
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой (24 этаж)
+/18 Генри Форд. Моя жизнь, мои достижения (24 этаж)
+/19 Олег Тиньков. Как стать бизнесменом (24 этаж)
+/20 (отдана) В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 Бретт Кинг. Банк 3.0 (24 этаж)
+/23 Фредерик Лалу. Открывая организации будущего (24 этаж)
+/24 Максим Богатырев. 45 татуировок продавана (24 этаж)
+/25 Максим Богатырев. 45 татуировок менеджера (24 этаж)
+/26 Ицхак Адизес. Управление жизненным циклом корпорации (24 этаж)
+/27 Майкл Кон. Пользовательские истории (24 этаж)
+/28 (отдана) Саймон Синек. Начни с вопроса "Почему?"
+/29 Эрик Берн. Игры, в которые играют люди. Люди, которые играют в игры (24 этаж)
+/30 Т.Драйзер. Финансист (24 этаж)
+/31 Стивен Кови. 7 навыков высокоэффективных людей (24 этаж)
+/32 Э.Лефевр. Воспоминания биржевого спекулянта (24 этаж)
+/33 Искусство системного мышления (24 этаж)
+/34 Ричард Брэнсон. Теряя невинность (24 этаж)
+/35 Том Демарко. Deadline (24 этаж)
+/36 М.Зыгарь. Вся кремлевская рать (24 этаж)
+/37 Р.Чалдини. Психология влияния (24 этаж)
+/38 (отдана) Эльяху Голдрат. Цель
+" 
+
+2017-04-19 20:16:12.042786 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/list" answer="Список книг:
+/1 (отдана) Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв (24 этаж)
+/3 Михаил Литвак. Командовать или подчиняться (24 этаж)
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок (24 этаж)
+/6 Эрик Рис. Бизнес с нуля (24 этаж)
+/7 Ицхак Адизес. Идеальный руководитель (24 этаж)
+/8 Ицхак Адизес. Развитие лидеров (24 этаж)
+/9 Олег Тиньков. Я такой как все (24 этаж)
+/10 Олег Тиньков. Я такой как все (24 этаж)
+/11 Ф.Брукс. Мифический человеко-месяц (24 этаж)
+/12 Г.Кеннеди. Договориться можно обо всем (24 этаж)
+/13 Эдуард Френкель. Любовь и математика (24 этаж)
+/14 Stephen Few. Information dashboard design (24 этаж)
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed (24 этаж)
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой (24 этаж)
+/18 Генри Форд. Моя жизнь, мои достижения (24 этаж)
+/19 Олег Тиньков. Как стать бизнесменом (24 этаж)
+/20 (отдана) В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 Бретт Кинг. Банк 3.0 (24 этаж)
+/23 Фредерик Лалу. Открывая организации будущего (24 этаж)
+/24 Максим Богатырев. 45 татуировок продавана (24 этаж)
+/25 Максим Богатырев. 45 татуировок менеджера (24 этаж)
+/26 Ицхак Адизес. Управление жизненным циклом корпорации (24 этаж)
+/27 Майкл Кон. Пользовательские истории (24 этаж)
+/28 (отдана) Саймон Синек. Начни с вопроса "Почему?"
+/29 Эрик Берн. Игры, в которые играют люди. Люди, которые играют в игры (24 этаж)
+/30 Т.Драйзер. Финансист (24 этаж)
+/31 Стивен Кови. 7 навыков высокоэффективных людей (24 этаж)
+/32 Э.Лефевр. Воспоминания биржевого спекулянта (24 этаж)
+/33 Искусство системного мышления (24 этаж)
+/34 Ричард Брэнсон. Теряя невинность (24 этаж)
+/35 Том Демарко. Deadline (24 этаж)
+/36 М.Зыгарь. Вся кремлевская рать (24 этаж)
+/37 Р.Чалдини. Психология влияния (24 этаж)
+/38 (отдана) Эльяху Голдрат. Цель
+" 
+
+2017-04-19 20:16:40.953060 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/list" answer="Список книг:
+/1 (отдана) Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв (24 этаж)
+/3 Михаил Литвак. Командовать или подчиняться (24 этаж)
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок (24 этаж)
+/6 Эрик Рис. Бизнес с нуля (24 этаж)
+/7 Ицхак Адизес. Идеальный руководитель (24 этаж)
+/8 Ицхак Адизес. Развитие лидеров (24 этаж)
+/9 Олег Тиньков. Я такой как все (24 этаж)
+/10 Олег Тиньков. Я такой как все (24 этаж)
+/11 Ф.Брукс. Мифический человеко-месяц (24 этаж)
+/12 Г.Кеннеди. Договориться можно обо всем (24 этаж)
+/13 Эдуард Френкель. Любовь и математика (24 этаж)
+/14 Stephen Few. Information dashboard design (24 этаж)
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed (24 этаж)
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой (24 этаж)
+/18 Генри Форд. Моя жизнь, мои достижения (24 этаж)
+/19 Олег Тиньков. Как стать бизнесменом (24 этаж)
+/20 (отдана) В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 Бретт Кинг. Банк 3.0 (24 этаж)
+/23 Фредерик Лалу. Открывая организации будущего (24 этаж)
+/24 Максим Богатырев. 45 татуировок продавана (24 этаж)
+/25 Максим Богатырев. 45 татуировок менеджера (24 этаж)
+/26 Ицхак Адизес. Управление жизненным циклом корпорации (24 этаж)
+/27 Майкл Кон. Пользовательские истории (24 этаж)
+/28 (отдана) Саймон Синек. Начни с вопроса "Почему?"
+/29 Эрик Берн. Игры, в которые играют люди. Люди, которые играют в игры (24 этаж)
+/30 Т.Драйзер. Финансист (24 этаж)
+/31 Стивен Кови. 7 навыков высокоэффективных людей (24 этаж)
+/32 Э.Лефевр. Воспоминания биржевого спекулянта (24 этаж)
+/33 Искусство системного мышления (24 этаж)
+/34 Ричард Брэнсон. Теряя невинность (24 этаж)
+/35 Том Демарко. Deadline (24 этаж)
+/36 М.Зыгарь. Вся кремлевская рать (24 этаж)
+/37 Р.Чалдини. Психология влияния (24 этаж)
+/38 (отдана) Эльяху Голдрат. Цель
+" 
+
+2017-04-19 20:35:52.003564 
+name="Vitaliy" surname="Arzumanyan" id=81593382 text="/list" answer="Список книг:
+/1 (отдана) Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв (24 этаж)
+/3 Михаил Литвак. Командовать или подчиняться (24 этаж)
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок (24 этаж)
+/6 Эрик Рис. Бизнес с нуля (24 этаж)
+/7 Ицхак Адизес. Идеальный руководитель (24 этаж)
+/8 Ицхак Адизес. Развитие лидеров (24 этаж)
+/9 Олег Тиньков. Я такой как все (24 этаж)
+/10 Олег Тиньков. Я такой как все (24 этаж)
+/11 Ф.Брукс. Мифический человеко-месяц (24 этаж)
+/12 Г.Кеннеди. Договориться можно обо всем (24 этаж)
+/13 Эдуард Френкель. Любовь и математика (24 этаж)
+/14 Stephen Few. Information dashboard design (24 этаж)
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed (24 этаж)
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой (24 этаж)
+/18 Генри Форд. Моя жизнь, мои достижения (24 этаж)
+/19 Олег Тиньков. Как стать бизнесменом (24 этаж)
+/20 (отдана) В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 Бретт Кинг. Банк 3.0 (24 этаж)
+/23 Фредерик Лалу. Открывая организации будущего (24 этаж)
+/24 Максим Богатырев. 45 татуировок продавана (24 этаж)
+/25 Максим Богатырев. 45 татуировок менеджера (24 этаж)
+/26 Ицхак Адизес. Управление жизненным циклом корпорации (24 этаж)
+/27 Майкл Кон. Пользовательские истории (24 этаж)
+/28 (отдана) Саймон Синек. Начни с вопроса "Почему?"
+/29 Эрик Берн. Игры, в которые играют люди. Люди, которые играют в игры (24 этаж)
+/30 Т.Драйзер. Финансист (24 этаж)
+/31 Стивен Кови. 7 навыков высокоэффективных людей (24 этаж)
+/32 Э.Лефевр. Воспоминания биржевого спекулянта (24 этаж)
+/33 Искусство системного мышления (24 этаж)
+/34 Ричард Брэнсон. Теряя невинность (24 этаж)
+/35 Том Демарко. Deadline (24 этаж)
+/36 М.Зыгарь. Вся кремлевская рать (24 этаж)
+/37 Р.Чалдини. Психология влияния (24 этаж)
+/38 (отдана) Эльяху Голдрат. Цель
+" 
+
+2017-04-19 20:38:26.639974 
+name="Dmitry" surname="Tomin" id=112237516 text="/start" answer="Привет! Я бот-библиотекарь в SME.
+Скажи мне, какую книжку ты хочешь взять, и я тебя запишу ;)
+
+Пообщаться со мной можно так:
+/list - Посмотреть, что лежит на полке
+/take - Взять книгу с полки
+/return - Вернуть книгу на полку
+/n, где n это номер книги - Действия с этой книгой
+
+и, конечно
+/help - Список команд" 
+
+ROFL 01
+ROFL 02
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072174c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c07370f48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072174c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c07370f48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072174c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c07370f48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072174c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c07370f48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072174c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c07370f48>)
+2017-04-19 20:38:50.922639 
+name="Dmitry" surname="Tomin" id=112237516 text="/list" answer="Список книг:
+/1 (отдана) Алистер Коберн. Современные методы описания функциональных требований к системам
+/2 Глеб Архангельский. Тайм-драйв (24 этаж)
+/3 Михаил Литвак. Командовать или подчиняться (24 этаж)
+/4 (отдана) Джефф Сазерленд. SCRUM
+/5 Девид Аллен. Как привести дела в порядок (24 этаж)
+/6 Эрик Рис. Бизнес с нуля (24 этаж)
+/7 Ицхак Адизес. Идеальный руководитель (24 этаж)
+/8 Ицхак Адизес. Развитие лидеров (24 этаж)
+/9 Олег Тиньков. Я такой как все (24 этаж)
+/10 Олег Тиньков. Я такой как все (24 этаж)
+/11 Ф.Брукс. Мифический человеко-месяц (24 этаж)
+/12 Г.Кеннеди. Договориться можно обо всем (24 этаж)
+/13 Эдуард Френкель. Любовь и математика (24 этаж)
+/14 Stephen Few. Information dashboard design (24 этаж)
+/15 (отдана) Джин Желязны. Говори на языке диаграм
+/16 Essetial Kanban Condensed (24 этаж)
+/17 Хенрик Книберг. Scrum и XP: заметки с передовой (24 этаж)
+/18 Генри Форд. Моя жизнь, мои достижения (24 этаж)
+/19 Олег Тиньков. Как стать бизнесменом (24 этаж)
+/20 (отдана) В.Чан Ким, Рене Моборн. Стратегия голубого океана
+/21 (отдана) Роман Пихлер. Управление продуктом в SCRUM
+/22 Бретт Кинг. Банк 3.0 (24 этаж)
+/23 Фредерик Лалу. Открывая организации будущего (24 этаж)
+/24 Максим Богатырев. 45 татуировок продавана (24 этаж)
+/25 Максим Богатырев. 45 татуировок менеджера (24 этаж)
+/26 Ицхак Адизес. Управление жизненным циклом корпорации (24 этаж)
+/27 Майкл Кон. Пользовательские истории (24 этаж)
+/28 (отдана) Саймон Синек. Начни с вопроса "Почему?"
+/29 Эрик Берн. Игры, в которые играют люди. Люди, которые играют в игры (24 этаж)
+/30 Т.Драйзер. Финансист (24 этаж)
+/31 Стивен Кови. 7 навыков высокоэффективных людей (24 этаж)
+/32 Э.Лефевр. Воспоминания биржевого спекулянта (24 этаж)
+/33 Искусство системного мышления (24 этаж)
+/34 Ричард Брэнсон. Теряя невинность (24 этаж)
+/35 Том Демарко. Deadline (24 этаж)
+/36 М.Зыгарь. Вся кремлевская рать (24 этаж)
+/37 Р.Чалдини. Психология влияния (24 этаж)
+/38 (отдана) Эльяху Голдрат. Цель
+" 
+
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c07370f48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c07370f48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+2017-04-19 20:38:56.548093 
+name="Dmitry" surname="Tomin" id=112237516 text="/7" answer="Ты выбрал книгу - что с ней делать?" 
+
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c07370f48>)
+2017-04-19 20:38:58.522300 
+name="Dmitry" surname="Tomin" id=112237516 text="Взять" answer="!no answer" 
+
+['269342507', '1491412930', 0]
+['0', '0', 0]
+['0', '0', 0]
+['224866506', '1490102068', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '1490706515', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '1490116322', 0]
+['0', '0', 0]
+['0', '0', 0]
+['329485118', '1482218195', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '1489917909', 0]
+['112237516', '1491337145', 0]
+['81593382', '1482822861', 0]
+['0', '1492018083', 0]
+['0', '1491375446', 0]
+['0', '0', 0]
+['0', '1491203666', 0]
+['0', '0', 0]
+['0', '1490380152', 0]
+['74681100', '1490625758', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['81593382', '1491326552', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+2017-04-19 20:38:58.581899 
+name="Dmitry" surname="Tomin" id=112237516 text="Взять" answer="Отлично, книга номер 7 теперь у тебя" 
+
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c07370f48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+2017-04-19 20:39:01.039056 
+name="Dmitry" surname="Tomin" id=112237516 text="/34" answer="Ты выбрал книгу - что с ней делать?" 
+
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+2017-04-19 20:39:05.280029 
+name="Dmitry" surname="Tomin" id=112237516 text="Взять" answer="!no answer" 
+
+['269342507', '1491412930', 0]
+['0', '0', 0]
+['0', '0', 0]
+['224866506', '1490102068', 0]
+['0', '0', 0]
+['0', '0', 0]
+['112237516', '1492634339', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '1490116322', 0]
+['0', '0', 0]
+['0', '0', 0]
+['329485118', '1482218195', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '1489917909', 0]
+['112237516', '1491337145', 0]
+['81593382', '1482822861', 0]
+['0', '1492018083', 0]
+['0', '1491375446', 0]
+['0', '0', 0]
+['0', '1491203666', 0]
+['0', '0', 0]
+['0', '1490380152', 0]
+['74681100', '1490625758', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['81593382', '1491326552', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+['0', '0', 0]
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+2017-04-19 20:39:05.335029 
+name="Dmitry" surname="Tomin" id=112237516 text="Взять" answer="Кажется, эту книгу уже забрали. Или у тебя слишком много книг" 
+
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c072176c8>)
+Unexpected error: (<class 'ValueError'>, ValueError("invalid literal for int() with base 10: ''",), <traceback object at 0x7f6c0543fd48>)

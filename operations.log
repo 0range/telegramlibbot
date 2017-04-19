@@ -11,3 +11,5 @@
 2017-04-05 17:22:10.252052 operation=Take book=1 success=True user=269342507 
 2017-04-12 11:50:49.642753 operation=Ping book=4 success=True user=81593382 
 2017-04-12 17:28:03.300008 operation=Put book=22 success=True user=80867971 
+2017-04-19 20:38:58.523666 operation=Take book=7 success=True user=112237516 
+2017-04-19 20:39:05.281134 operation=Take book=34 success=False user=112237516 
