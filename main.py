@@ -78,7 +78,7 @@ def is_number(text):
     range_bool = True
     try:
         a = int(text)
-        range_bool = a in range(books.count())
+        range_bool = a in range(books.count() + 1)
     except:
         range_bool = False
     num_bool = (text.strip() == str(a))
@@ -90,7 +90,9 @@ def list_of_books():
     book_statuses = dict()
     with open(constants.filename_status,'r') as book_file:
         for line in book_file:
-            book_statuses[int(line.split(',')[0])] = [line.split(',')[1], line.split(',')[2]]
+            book_statuses[int(line.split(',')[0])] = [line.split(',')[1], str(int(line.split(',')[2]))]
+            if len(line.split(',')) >= 4:
+                book_statuses[int(line.split(',')[0])].append(int(line.split(',')[3]))
 
     res = "Список книг:\n"
     
@@ -100,6 +102,10 @@ def list_of_books():
             res += "/" + str(item[0]) + " (отдана) " + item[1]
         else:
             res += "/" + str(item[0]) + " " + item[1]
+            if len(book_statuses[item[0]]) <= 2:
+                res += " (24 этаж)"
+            else:
+                res += " (" + constants.bookshelfs[book_statuses[item[0]][2]] + ")"
         res += "\n"
     
     return res
@@ -108,7 +114,17 @@ def get_book_from_shell(book_id, message):
     books = dict()
     with open(constants.filename_status,'r') as book_file:
         for line in book_file:
-            books[int(line.split(',')[0])] = [line.split(',')[1], line.split(',')[2]]
+            #print("OLOLO  put book on shelf 010 " + line.split(',')[0])
+            #print(line)
+            books[int(line.split(',')[0])] = [line.split(',')[1], str(int(line.split(',')[2]))]
+            #print("OLOLO  put book on shelf 011 " + line.split(',')[0])
+            if len(line.split(',')) > 3:
+                books[int(line.split(',')[0])].append(int(line.split(',')[3]))
+                #print("OLOLO  put book on shelf 012 " + line.split(',')[0])
+            else:
+                books[int(line.split(',')[0])].append(0)
+                #print("OLOLO  put book on shelf 013 " + line.split(',')[0])
+    #print(books)
     #print(books)
 
     if int(books[book_id][0]) != 0:
@@ -127,18 +143,20 @@ def get_book_from_shell(book_id, message):
     #print(taken_books_counter)
     
     books[book_id][0] = str(message.from_user.id)
-    books[book_id][1] = str(round(time.time())) + "\n"
+    books[book_id][1] = str(round(time.time())) 
+    books[book_id][2] = "0"
     with open(constants.filename_status,'w') as book_file:
         for item in books:
-            book_file.write(str(item) + "," + books[item][0] + "," + books[item][1])
+            book_file.write(str(item) + "," + books[item][0] + "," + books[item][1] + "," + str(books[item][2]) + "\n")
     logOperation("operation=Take book=" + str(book_id) + " success=True user=" + str(message.from_user.id))
     return True
 
+## Здесь нужно научить бота работать с несколькими книгами!
 def put_book_on_shell(book_id, message):
     books = dict()
     with open(constants.filename_status,'r') as book_file:
         for line in book_file:
-            books[int(line.split(',')[0])] = [line.split(',')[1], line.split(',')[2]]
+            books[int(line.split(',')[0])] = [line.split(',')[1], str(int(line.split(',')[2]))]
     #print(books)
 
     if int(books[book_id][0]) == 0:
@@ -150,6 +168,49 @@ def put_book_on_shell(book_id, message):
     with open(constants.filename_status,'w') as book_file:
         for item in books:
             book_file.write(str(item) + "," + books[item][0] + "," + books[item][1])
+    logOperation("operation=Put book=" + str(book_id) + " success=True user=" + str(message.from_user.id))
+    return True
+
+## Здесь бот начился работать с несколькими полками
+def put_book_on_shelf(book_id, message):
+    books = dict()
+    #print("OLOLO  put book on shelf 01")
+    with open(constants.filename_status,'r') as book_file:
+        for line in book_file:
+            #print("OLOLO  put book on shelf 010 " + line.split(',')[0])
+            #print(line)
+            books[int(line.split(',')[0])] = [line.split(',')[1], str(int(line.split(',')[2]))]
+            #print("OLOLO  put book on shelf 011 " + line.split(',')[0])
+            if len(line.split(',')) > 3:
+                books[int(line.split(',')[0])].append(int(line.split(',')[3]))
+                #print("OLOLO  put book on shelf 012 " + line.split(',')[0])
+            else:
+                books[int(line.split(',')[0])].append(0)
+                #print("OLOLO  put book on shelf 013 " + line.split(',')[0])
+    #print(books)
+    #print("OLOLO  put book on shelf 02")
+
+    if int(books[book_id][0]) == 0:
+        logOperation("operation=Put book=" + str(book_id) + " success=False user=" + str(message.from_user.id))
+        return False
+    #print("OLOLO  put book on shelf 03")
+
+    books[book_id][0] = "0"
+    books[book_id][1] = str(round(time.time()))
+    #print("OLOLO  put book on shelf 04")
+    
+    shelf_id = 0
+    if message.text == "25 этаж":
+        shelf_id = 1
+    
+    #print("OLOLO  put book on shelf 05")
+    books[book_id][2] = shelf_id
+
+    #print("OLOLO  put book on shelf 06")
+    with open(constants.filename_status,'w') as book_file:
+        for item in books:
+            book_file.write(str(item) + "," + books[item][0] + "," + books[item][1] + "," + str(books[item][2]) + "\n")
+    #print("OLOLO  put book on shelf 07")
     logOperation("operation=Put book=" + str(book_id) + " success=True user=" + str(message.from_user.id))
     return True
 
@@ -193,10 +254,28 @@ def handle_text(message):
 
 @bot.message_handler(commands=['take'])
 def handle_text(message):
-    answer = constants.message_tell_book_number_get
-    sent = bot.send_message(message.chat.id, answer)
-    log(message, answer)
-    bot.register_next_step_handler(sent, take_book)
+    print("ROFL 01")
+    maybe_number = message.text[5:].strip()
+    print("ROFL 02")
+    
+    if str(int(maybe_number)) == maybe_number and is_number(maybe_number):
+        print("ROFL 02 01")
+        if get_book_from_shell(int(maybe_number), message):
+            print("ROFL 02 01 01")
+            answer =  constants.message_you_got_book.format(maybe_number)#, 
+                                                            #constants.lib[int(message.text.strip())][0])
+        else:
+            print("ROFL 02 01 02")
+            answer = constants.message_already_taken
+        bot.send_message(message.chat.id, answer)
+        log(message, answer)
+    else:
+        print("ROFL 02 02")
+        answer = constants.message_tell_book_number_get
+        sent = bot.send_message(message.chat.id, answer)
+        log(message, answer)
+        bot.register_next_step_handler(sent, take_book)        
+    
 
 def take_book(message):
     if is_number(message.text):
@@ -217,24 +296,39 @@ def handle_text(message):
     answer = constants.message_tell_book_number_return
     sent = bot.send_message(message.chat.id, answer)
     log(message, answer)
-    bot.register_next_step_handler(sent, return_book)
+    bot.register_next_step_handler(sent, return_book_choose_book)
 
-def return_book(message):
+def return_book_choose_book(message):
+    global book_id
     if is_number(message.text):
-        if put_book_on_shell(int(message.text), message):
-            answer = constants.message_you_returned_book.format(message.text.strip())#, 
-                                                                #constants.lib[int(message.text.strip())][0])
-            waiters_waiting = checkSubscriptionsForReturn(int(message.text), message)
-            for waiter in waiters_waiting:
-                bot.send_message(waiter, constants.message_subscribe_returned.format(message.text))
-        else:
-            answer = constants.message_already_returned
-        bot.send_message(message.chat.id, answer)
+        answer = constants.message_tell_shelf_number_return
+        #print("OLOLO Return book set answer")
+        user_markup = telebot.types.ReplyKeyboardMarkup(True, True)  
+        user_markup.row('24 этаж','25 этаж')
+        sent = bot.send_message(message.chat.id, answer, reply_markup = user_markup)
+        #print("OLOLO Return book sent message")
         log(message, answer)
+        #print("OLOLO Return book log")
+        book_id = int(message.text) 
+        bot.register_next_step_handler(sent, return_book_choose_shelf)
     else:
         answer = constants.message_bad_number
         bot.send_message(message.chat.id, answer)
         log(message, answer)
+
+def return_book_choose_shelf(message):
+    global book_id
+    if put_book_on_shelf(book_id, message):
+        answer = constants.message_you_returned_book.format(str(book_id))#, 
+                                                                #constants.lib[int(message.text.strip())][0])
+        waiters_waiting = checkSubscriptionsForReturn(book_id, message)
+        for waiter in waiters_waiting:
+            bot.send_message(waiter, constants.message_subscribe_returned.format(message.text))
+    else:
+        answer = constants.message_already_returned    
+    book_id = 0
+    bot.send_message(message.chat.id, answer)
+    log(message, answer)
 
 @bot.message_handler(commands=['list'])
 def handle_text(message):
@@ -285,6 +379,7 @@ def handle_text(message):
 
 def manage_book(message):
     global  current_book_num
+    global book_id
     #print(current_book_num)
     if current_book_num == 0:
         pass
@@ -298,15 +393,15 @@ def manage_book(message):
         current_book_num = 0
         log(message, answer)
     elif message.text == "Положить":
-        if put_book_on_shell(current_book_num, message):
-            answer = constants.message_you_returned_book.format(str(current_book_num))#, 
-                                                                #constants.lib[current_book_num][0])
-            waiters_waiting = checkSubscriptionsForReturn(current_book_num, message)
-            for waiter in waiters_waiting:
-                bot.send_message(waiter, constants.message_subscribe_returned.format(str(current_book_num)))
-        else: 
-            answer = constants.message_already_returned
-        bot.send_message(message.chat.id, answer)
+        answer = constants.message_tell_shelf_number_return
+
+        user_markup = telebot.types.ReplyKeyboardMarkup(True, True)  
+        user_markup.row('24 этаж','25 этаж')
+
+        sent = bot.send_message(message.chat.id, answer, reply_markup = user_markup)
+
+        book_id = current_book_num
+        bot.register_next_step_handler(sent, return_book_choose_shelf)
         current_book_num = 0
         log(message, answer)
     elif message.text == "Почитать описание":

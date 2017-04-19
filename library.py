@@ -17,7 +17,7 @@ class library(object):
     self.library["list"].append(new_book)
 
   def show(self):
-    pprint(self.library)
+    print(self.library)
 
   def count(self):
     return(len(self.library["list"]))
