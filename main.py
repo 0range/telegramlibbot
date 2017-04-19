@@ -258,7 +258,7 @@ def handle_text(message):
     maybe_number = message.text[5:].strip()
     print("ROFL 02")
     
-    if str(int(maybe_number)) == maybe_number and is_number(maybe_number):
+    if maybe_number != "" and str(int(maybe_number)) == maybe_number and is_number(maybe_number):
         print("ROFL 02 01")
         if get_book_from_shell(int(maybe_number), message):
             print("ROFL 02 01 01")
@@ -487,7 +487,7 @@ def handle_text(message):
 
 
 
-for i in range(100):
+for i in range(3):
     try:
         bot.polling(none_stop=True, interval=1, timeout=60)
     except:
