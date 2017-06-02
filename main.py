@@ -5,6 +5,7 @@ import time
 import sys
 from library import library
 import json
+import editdistance
 
 
 print(constants.message_start_bot)
@@ -84,13 +85,27 @@ def is_number(text):
     num_bool = (text.strip() == str(a))
     return num_bool & range_bool
 
-def list_of_books():
+def string_like_enough(search, source):  
+    min_dist = max(len(search), len(source))
+    min_dist = min(min_dist, editdistance.eval(search, source))
+
+    i = 0
+
+    while i + len(search) <= len(source):
+        min_dist = min(min_dist, editdistance.eval(search, source[i:i+len(search)]))
+        i += 1
+
+    res = (min_dist <= min(len(search), len(source)) / 3)
+    return res
+
+def list_of_books(floor = "", searchString = ""):
     books = library(constants.filename_book_list)
 
     book_statuses = dict()
     with open(constants.filename_status,'r') as book_file:
         for line in book_file:
             book_statuses[int(line.split(',')[0])] = [line.split(',')[1], str(int(line.split(',')[2]))]
+            # book status : book_id, user_id, timestamp, floor
             if len(line.split(',')) >= 4:
                 book_statuses[int(line.split(',')[0])].append(int(line.split(',')[3]))
 
@@ -98,15 +113,27 @@ def list_of_books():
     
     for item in books.list():
         
-        if int(book_statuses[item[0]][0]) != 0:
+        if int(book_statuses[item[0]][0]) != 0 and floor == "" and searchString == "":
             res += "/" + str(item[0]) + " (отдана) " + item[1]
-        else:
+            res += "\n"
+        elif floor == "" and searchString == "":
             res += "/" + str(item[0]) + " " + item[1]
             if len(book_statuses[item[0]]) <= 2:
                 res += " (24 этаж)"
             else:
                 res += " (" + constants.bookshelfs[book_statuses[item[0]][2]] + ")"
-        res += "\n"
+            res += "\n"
+        elif int(book_statuses[item[0]][0]) == 0 and floor != "" and searchString == "":
+            if floor == constants.bookshelfs[book_statuses[item[0]][2]] and len(book_statuses[item[0]]) > 2:
+                res += "/" + str(item[0]) + " " + item[1]
+                res += "\n"
+        elif searchString != "":
+            if (string_like_enough(searchString.lower(), item[1].lower())):
+                if int(book_statuses[item[0]][0]) != 0:
+                    res += "/" + str(item[0]) + " (отдана) " + item[1]
+                else:
+                    res += "/" + str(item[0]) + " " + item[1]
+                res += "\n"
     
     return res
 
@@ -332,7 +359,48 @@ def return_book_choose_shelf(message):
 
 @bot.message_handler(commands=['list'])
 def handle_text(message):
-    answer = list_of_books()
+    answer = 'Какие книги хочешь посмотреть?'
+    user_markup = telebot.types.ReplyKeyboardMarkup(True, True)
+    user_markup.row('24 этаж', '25 этаж')
+    user_markup.row('Все', 'Поиск')
+    user_markup.row('Книги у меня')
+    
+    sent = bot.send_message(message.chat.id, answer, reply_markup=user_markup)
+    
+    log(message, answer)
+
+    bot.register_next_step_handler(sent, list_advanced)
+
+def list_advanced(message):
+    if message.text == 'Все':
+        answer = list_of_books()
+        bot.send_message(message.chat.id, answer)
+        log(message, answer) 
+    elif message.text == '24 этаж':
+        answer = list_of_books(floor = "24 этаж")
+        bot.send_message(message.chat.id, answer)
+        log(message, answer) 
+    elif message.text == '25 этаж':
+        answer = list_of_books(floor = "25 этаж")
+        bot.send_message(message.chat.id, answer)
+        log(message, answer) 
+    elif message.text == 'Поиск':
+        answer = 'Введи поисковую строку'
+        sent = bot.send_message(message.chat.id, answer)
+        log(message, answer) 
+        bot.register_next_step_handler(sent, list_search)
+    elif message.text == 'Книги у меня':
+        answer = 'Coming soon :) попробуй /list снова'
+        bot.send_message(message.chat.id, answer)
+        log(message, answer) 
+    else:
+        answer = 'Непонятно'
+        bot.send_message(message.chat.id, answer)
+        log(message, answer)  
+
+
+def list_search(message):
+    answer = list_of_books(searchString = message.text)
     bot.send_message(message.chat.id, answer)
     log(message, answer)
 
