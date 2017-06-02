@@ -1,0 +1,5 @@
+2017-05-18 16:07:38.811339 name="Igor" surname="Mamaev" id=140594823 text="/return" answer="Скажи номер книги, которую возвращаешь" 
+2017-05-18 16:07:42.772505 name="Igor" surname="Mamaev" id=140594823 text="17" answer="!no answer" 
+2017-05-18 16:07:42.880962 name="Igor" surname="Mamaev" id=140594823 text="17" answer="Скажи полку, на которую поставить книгу" 
+2017-05-18 16:07:45.513954 name="Igor" surname="Mamaev" id=140594823 text="24 этаж" answer="!no answer" 
+2017-05-18 16:07:45.672286 name="Igor" surname="Mamaev" id=140594823 text="24 этаж" answer="Отлично, книга номер 17 вернулась на полку. Спасибо!" 
