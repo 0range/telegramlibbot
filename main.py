@@ -98,6 +98,19 @@ def string_like_enough(search, source):
     res = (min_dist <= min(len(search), len(source)) / 3)
     return res
 
+def list_of_users():
+    res = []
+
+    with open(constants.filename_status,'r') as book_file:
+        for line in book_file:
+            if line.split(',')[1] != "0":
+                res.append(line.split(',')[1])
+
+    res = list(set(res))
+    print(res)
+    
+    return res
+
 def list_of_books(floor = "", searchString = ""):
     books = library(constants.filename_book_list)
 
@@ -136,6 +149,26 @@ def list_of_books(floor = "", searchString = ""):
                 res += "\n"
     
     return res
+
+def list_of_self_books(userId):
+    books = library(constants.filename_book_list)
+
+    book_statuses = dict()
+    with open(constants.filename_status,'r') as book_file:
+        for line in book_file:
+            book_statuses[int(line.split(',')[0])] = [line.split(',')[1], str(int(line.split(',')[2]))]
+            # book status : book_id, user_id, timestamp, floor
+            if len(line.split(',')) >= 4:
+                book_statuses[int(line.split(',')[0])].append(int(line.split(',')[3]))
+
+    res = "Список книг:"
+    
+    for item in books.list():
+        if int(book_statuses[item[0]][0]) == userId:
+            res += "\n/" + str(item[0]) + " " + item[1]
+
+    return res
+    
 
 def get_book_from_shell(book_id, message):
     books = dict()
@@ -262,9 +295,12 @@ def collect(message):
         for line in book_file:
             if int(line.split(',')[1]) != 0 and round(time.time()) - constants.collection_time > int(line.split(',')[2]):
                 #print("Starting collection...   " + line)
-                answer = constants.message_collection.format(line.split(',')[0])
-                sent = bot.send_message(int(line.split(',')[1]), answer)
-                log(sent, answer)
+                try:
+                    answer = constants.message_collection.format(line.split(',')[0])
+                    sent = bot.send_message(int(line.split(',')[1]), answer)
+                    log(sent, answer)
+                except:
+                    log(message,"error writing to user" + str(line.split(',')[1]),)
     return True
 
 @bot.message_handler(commands=['start'])
@@ -350,7 +386,7 @@ def return_book_choose_shelf(message):
                                                                 #constants.lib[int(message.text.strip())][0])
         waiters_waiting = checkSubscriptionsForReturn(book_id, message)
         for waiter in waiters_waiting:
-            bot.send_message(waiter, constants.message_subscribe_returned.format(message.text))
+            bot.send_message(waiter, constants.message_subscribe_returned.format(str(book_id), message.text))
     else:
         answer = constants.message_already_returned    
     book_id = 0
@@ -390,7 +426,7 @@ def list_advanced(message):
         log(message, answer) 
         bot.register_next_step_handler(sent, list_search)
     elif message.text == 'Книги у меня':
-        answer = 'Coming soon :) попробуй /list снова'
+        answer = list_of_self_books(userId = message.chat.id)
         bot.send_message(message.chat.id, answer)
         log(message, answer) 
     else:
@@ -484,7 +520,11 @@ def manage_book(message):
         else:
             answer = constants.message_ping_requester_successfull
             ping_message = constants.message_ping_reader.format(str(current_book_num))
-            bot.send_message(result, ping_message)
+            try: 
+                bot.send_message(result, ping_message)
+            except:
+                print("Reader is not in list")
+                answer += "//problem with the reader"
         bot.send_message(message.chat.id, answer)
         current_book_num = 0
         log(message, answer)    
@@ -505,6 +545,29 @@ def handler_text(message):
         answer = constants.message_collection_forbidden
         bot.send_message(constants.manager, answer)
         log(message, answer)  
+
+@bot.message_handler(commands=['releasenotes'])
+def handler_text(message):
+    if message.chat.id == constants.manager:
+        answer = constants.message_releasenotes_waiting
+        sent = bot.send_message(message.chat.id, answer)
+        log(message, answer)
+        bot.register_next_step_handler(sent, send_releasenotes)
+    else:
+        answer = constants.message_releasenotes_forbidden
+        bot.send_message(constants.manager, answer)
+        log(message, answer)
+
+def send_releasenotes(message):
+    answer = constants.message_releasenotes_successfull
+    users = list_of_users()
+    for user in users:
+        try:
+            bot.send_message(user, message.text)
+        except:
+            bot.send_message(message.chat.id, constants.message_releasenotes_problem.format(str(user)))
+    bot.send_message(message.chat.id, answer)
+    log(message, answer)
 
 @bot.message_handler(commands=['add'])
 def handler_text(message):
