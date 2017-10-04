@@ -1,0 +1,5 @@
+2017-10-02 11:56:32.067797 name="Anna" surname="None" id=173961495 text="/return" answer="Скажи номер книги, которую возвращаешь" 
+2017-10-02 11:56:37.383314 name="Anna" surname="None" id=173961495 text="18" answer="!no answer" 
+2017-10-02 11:56:37.457566 name="Anna" surname="None" id=173961495 text="18" answer="Скажи полку, на которую поставить книгу" 
+2017-10-02 11:56:39.622471 name="Anna" surname="None" id=173961495 text="24 этаж" answer="!no answer" 
+2017-10-02 11:56:39.683422 name="Anna" surname="None" id=173961495 text="24 этаж" answer="Отлично, книга номер 18 вернулась на полку. Спасибо!" 

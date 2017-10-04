@@ -1,0 +1,5 @@
+2017-07-14 14:13:06.984015 Unexpected error:(<class 'json.decoder.JSONDecodeError'>, JSONDecodeError('Expecting value: line 1 column 1 (char 0)',), <traceback object at 0x7fb045b5b608>)
+2017-07-14 14:13:08.546753 Unexpected error:(<class 'json.decoder.JSONDecodeError'>, JSONDecodeError('Expecting value: line 1 column 1 (char 0)',), <traceback object at 0x7fb045b5b208>)
+2017-07-14 14:13:09.717448 Unexpected error:(<class 'json.decoder.JSONDecodeError'>, JSONDecodeError('Expecting value: line 1 column 1 (char 0)',), <traceback object at 0x7fb045b51588>)
+2017-08-15 09:58:42.931557 Unexpected error:(<class 'requests.exceptions.ReadTimeout'>, ReadTimeout(ReadTimeoutError("HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=70)",),), <traceback object at 0x7f98b2dc9948>)
+2017-10-03 11:42:14.621174 Unexpected error:(<class 'requests.exceptions.ReadTimeout'>, ReadTimeout(ReadTimeoutError("HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=70)",),), <traceback object at 0x7f9692d87b08>)
