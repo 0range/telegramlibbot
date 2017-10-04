@@ -306,13 +306,21 @@ def collect(message):
 @bot.message_handler(commands=['start'])
 def handle_text(message):
     answer = constants.message_start
-    bot.send_message(message.chat.id, answer)
+    user_markup = telebot.types.ReplyKeyboardMarkup(True, True)  
+    user_markup.row('/list')
+    user_markup.row('/return', '/take')
+    user_markup.row('/help', '/suggest')
+    bot.send_message(message.chat.id, answer, reply_markup = user_markup)
     log(message, answer)
 
 @bot.message_handler(commands=['help'])
 def handle_text(message):
     answer = constants.message_help
-    bot.send_message(message.chat.id, answer)
+    user_markup = telebot.types.ReplyKeyboardMarkup(True, True)  
+    user_markup.row('/list')
+    user_markup.row('/return', '/take')
+    user_markup.row('/help', '/suggest')
+    bot.send_message(message.chat.id, answer, reply_markup = user_markup)
     log(message, answer)
 
 @bot.message_handler(commands=['take'])
@@ -330,7 +338,12 @@ def handle_text(message):
         else:
             print("ROFL 02 01 02")
             answer = constants.message_already_taken
-        bot.send_message(message.chat.id, answer)
+        user_markup = telebot.types.ReplyKeyboardMarkup(True, True)  
+        user_markup.row('/list')
+        user_markup.row('/return', '/take')
+        user_markup.row('/help', '/suggest')
+        
+        bot.send_message(message.chat.id, answer, reply_markup = user_markup)
         log(message, answer)
     else:
         print("ROFL 02 02")
@@ -341,17 +354,22 @@ def handle_text(message):
     
 
 def take_book(message):
+    user_markup = telebot.types.ReplyKeyboardMarkup(True, True)  
+    user_markup.row('/list')
+    user_markup.row('/return', '/take')
+    user_markup.row('/help', '/suggest')
+
     if is_number(message.text):
         if get_book_from_shell(int(message.text), message):
             answer =  constants.message_you_got_book.format(message.text.strip())#, 
                                                             #constants.lib[int(message.text.strip())][0])
         else:
             answer = constants.message_already_taken
-        bot.send_message(message.chat.id, answer)
+        bot.send_message(message.chat.id, answer, reply_markup = user_markup)
         log(message, answer)
     else:
         answer = constants.message_bad_number
-        bot.send_message(message.chat.id, answer)
+        bot.send_message(message.chat.id, answer, reply_markup = user_markup)
         log(message, answer)
 
 @bot.message_handler(commands=['return'])
@@ -376,7 +394,11 @@ def return_book_choose_book(message):
         bot.register_next_step_handler(sent, return_book_choose_shelf)
     else:
         answer = constants.message_bad_number
-        bot.send_message(message.chat.id, answer)
+        user_markup = telebot.types.ReplyKeyboardMarkup(True, True)  
+        user_markup.row('/list')
+        user_markup.row('/return', '/take')
+        user_markup.row('/help', '/suggest')
+        bot.send_message(message.chat.id, answer, reply_markup = user_markup)
         log(message, answer)
 
 def return_book_choose_shelf(message):
@@ -390,7 +412,13 @@ def return_book_choose_shelf(message):
     else:
         answer = constants.message_already_returned    
     book_id = 0
-    bot.send_message(message.chat.id, answer)
+
+    user_markup = telebot.types.ReplyKeyboardMarkup(True, True)  
+    user_markup.row('/list')
+    user_markup.row('/return', '/take')
+    user_markup.row('/help', '/suggest')
+
+    bot.send_message(message.chat.id, answer, reply_markup = user_markup)
     log(message, answer)
 
 @bot.message_handler(commands=['list'])
@@ -408,17 +436,22 @@ def handle_text(message):
     bot.register_next_step_handler(sent, list_advanced)
 
 def list_advanced(message):
+    user_markup = telebot.types.ReplyKeyboardMarkup(True, True)  
+    user_markup.row('/list')
+    user_markup.row('/return', '/take')
+    user_markup.row('/help', '/suggest')
+
     if message.text == 'Все':
         answer = list_of_books()
-        bot.send_message(message.chat.id, answer)
+        bot.send_message(message.chat.id, answer, reply_markup = user_markup)
         log(message, answer) 
     elif message.text == '24 этаж':
         answer = list_of_books(floor = "24 этаж")
-        bot.send_message(message.chat.id, answer)
+        bot.send_message(message.chat.id, answer, reply_markup = user_markup)
         log(message, answer) 
     elif message.text == '25 этаж':
         answer = list_of_books(floor = "25 этаж")
-        bot.send_message(message.chat.id, answer)
+        bot.send_message(message.chat.id, answer, reply_markup = user_markup)
         log(message, answer) 
     elif message.text == 'Поиск':
         answer = 'Введи поисковую строку'
@@ -427,17 +460,22 @@ def list_advanced(message):
         bot.register_next_step_handler(sent, list_search)
     elif message.text == 'Книги у меня':
         answer = list_of_self_books(userId = message.chat.id)
-        bot.send_message(message.chat.id, answer)
+        bot.send_message(message.chat.id, answer, reply_markup = user_markup)
         log(message, answer) 
     else:
         answer = 'Непонятно'
-        bot.send_message(message.chat.id, answer)
+        bot.send_message(message.chat.id, answer, reply_markup = user_markup)
         log(message, answer)  
 
 
 def list_search(message):
     answer = list_of_books(searchString = message.text)
-    bot.send_message(message.chat.id, answer)
+    user_markup = telebot.types.ReplyKeyboardMarkup(True, True)  
+    user_markup.row('/list')
+    user_markup.row('/return', '/take')
+    user_markup.row('/help', '/suggest')
+
+    bot.send_message(message.chat.id, answer, reply_markup = user_markup)
     log(message, answer)
 
 @bot.message_handler(commands=['suggest'])
@@ -452,7 +490,13 @@ def get_book_suggestion(message):
     bot.send_message(message.chat.id, answer)
     log(message, answer)
     answer = constants.message_suggest_prefix + message.text
-    bot.send_message(constants.manager, answer)
+    
+    user_markup = telebot.types.ReplyKeyboardMarkup(True, True)  
+    user_markup.row('/list')
+    user_markup.row('/return', '/take')
+    user_markup.row('/help', '/suggest')
+    
+    bot.send_message(constants.manager, answer, reply_markup = user_markup)
     log(message, answer)
 
 @bot.message_handler(commands=['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25',
@@ -485,6 +529,11 @@ def manage_book(message):
     global  current_book_num
     global book_id
     #print(current_book_num)
+    user_markup = telebot.types.ReplyKeyboardMarkup(True, True)  
+    user_markup.row('/list')
+    user_markup.row('/return', '/take')
+    user_markup.row('/help', '/suggest')
+
     if current_book_num == 0:
         pass
     elif message.text == "Взять":
@@ -493,7 +542,7 @@ def manage_book(message):
                                                             #constants.lib[current_book_num][0])
         else:
             answer = constants.message_already_taken
-        bot.send_message(message.chat.id, answer)
+        bot.send_message(message.chat.id, answer, reply_markup=user_markup)
         current_book_num = 0
         log(message, answer)
     elif message.text == "Положить":
@@ -510,7 +559,7 @@ def manage_book(message):
         log(message, answer)
     elif message.text == "Почитать описание":
         answer = book_info(current_book_num, message)
-        bot.send_message(message.chat.id, answer)
+        bot.send_message(message.chat.id, answer, reply_markup=user_markup)
         current_book_num = 0
         log(message, answer)
     elif message.text == "Толкнуть читающего":
@@ -525,13 +574,13 @@ def manage_book(message):
             except:
                 print("Reader is not in list")
                 answer += "//problem with the reader"
-        bot.send_message(message.chat.id, answer)
+        bot.send_message(message.chat.id, answer, reply_markup=user_markup)
         current_book_num = 0
         log(message, answer)    
     elif message.text == "Подписаться на возврат":
         subscribeForReturn(current_book_num, message)
         answer = constants.message_subscribe_successfull
-        bot.send_message(message.chat.id, answer)
+        bot.send_message(message.chat.id, answer, reply_markup=user_markup)
         current_book_num = 0
         log(message, answer)  
 
