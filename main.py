@@ -132,7 +132,7 @@ def list_of_books(floor = "", searchString = ""):
         elif floor == "" and searchString == "":
             res += "/" + str(item[0]) + " " + item[1]
             if len(book_statuses[item[0]]) <= 2:
-                res += " (24 этаж)"
+                res += " (17 этаж)"
             else:
                 res += " (" + constants.bookshelfs[book_statuses[item[0]][2]] + ")"
             res += "\n"
@@ -197,7 +197,7 @@ def get_book_from_shell(book_id, message):
         print(books[book])
         if int(books[book][0]) == message.from_user.id:
             taken_books_counter += 1
-    if taken_books_counter >= 2:
+    if taken_books_counter >= 3:
         logOperation("operation=Take book=" + str(book_id) + " success=False user=" + str(message.from_user.id)) 
         return False
     #print(taken_books_counter)
@@ -385,7 +385,7 @@ def return_book_choose_book(message):
         answer = constants.message_tell_shelf_number_return
         #print("OLOLO Return book set answer")
         user_markup = telebot.types.ReplyKeyboardMarkup(True, True)  
-        user_markup.row('24 этаж','25 этаж')
+        user_markup.row('17 этаж','25 этаж')
         sent = bot.send_message(message.chat.id, answer, reply_markup = user_markup)
         #print("OLOLO Return book sent message")
         log(message, answer)
@@ -425,7 +425,7 @@ def return_book_choose_shelf(message):
 def handle_text(message):
     answer = 'Какие книги хочешь посмотреть?'
     user_markup = telebot.types.ReplyKeyboardMarkup(True, True)
-    user_markup.row('24 этаж', '25 этаж')
+    user_markup.row('17 этаж', '25 этаж')
     user_markup.row('Все', 'Поиск')
     user_markup.row('Книги у меня')
     
@@ -445,8 +445,8 @@ def list_advanced(message):
         answer = list_of_books()
         bot.send_message(message.chat.id, answer, reply_markup = user_markup)
         log(message, answer) 
-    elif message.text == '24 этаж':
-        answer = list_of_books(floor = "24 этаж")
+    elif message.text == '17 этаж':
+        answer = list_of_books(floor = "17 этаж")
         bot.send_message(message.chat.id, answer, reply_markup = user_markup)
         log(message, answer) 
     elif message.text == '25 этаж':
@@ -549,7 +549,7 @@ def manage_book(message):
         answer = constants.message_tell_shelf_number_return
 
         user_markup = telebot.types.ReplyKeyboardMarkup(True, True)  
-        user_markup.row('24 этаж','25 этаж')
+        user_markup.row('17 этаж','25 этаж')
 
         sent = bot.send_message(message.chat.id, answer, reply_markup = user_markup)
 
@@ -667,7 +667,7 @@ def handle_text(message):
 
 
 
-for i in range(3):
+for i in range(153):
     try:
         bot.polling(none_stop=True, interval=1, timeout=60)
     except:

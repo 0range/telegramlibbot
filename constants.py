@@ -1,3 +1,4 @@
+
 token = "370650649:AAGnrKtBZLViwxm0faRBFfdFVXECTiAkrWQ"
 
 manager = 81593382
@@ -65,4 +66,4 @@ message_releasenotes_forbidden = "Попытка рассылки о релиз�
 message_releasenotes_successfull = "Успешно отправлены заметки о релизе"
 message_releasenotes_problem = "Не удается доставить до пользователя {0}"
 
-bookshelfs = ["24 этаж", "25 этаж"]
+bookshelfs = ["17 этаж", "25 этаж"]
